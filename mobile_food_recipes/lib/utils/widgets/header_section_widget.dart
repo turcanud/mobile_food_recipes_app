@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:mobile_food_recipes/core/constants/colors_constants.dart';
+
+class HeaderSectionWidget extends StatelessWidget {
+  final String title;
+  final bool openSection;
+  const HeaderSectionWidget({
+    super.key,
+    required this.title,
+    this.openSection = true,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.w600,
+            color: ColorsConstants.kPrimaryTextColor,
+          ),
+        ),
+        const Spacer(),
+        if (openSection)
+          Text(
+            "See All",
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.w600,
+              color: Color(0xffC77D0A),
+            ),
+          ),
+      ],
+    );
+  }
+}
