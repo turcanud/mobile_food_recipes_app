@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mobile_food_recipes/utils/widgets/custom_text_widget.dart';
 
 import '../../core/constants/colors_constants.dart';
 import 'button_builder_widget.dart';
@@ -15,7 +16,6 @@ class RecipesRecommendation extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
-        // outline border
         border: Border.all(color: Color(0xffEBEBEB), width: 1.2),
       ),
       child: Column(
@@ -26,21 +26,13 @@ class RecipesRecommendation extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Recipes recommendation",
-                      style: TextStyle(
-                        color: ColorsConstants.kPrimaryTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      "Get your personalized recipes recommendation in a 4 steps",
-                      style: TextStyle(
-                        color: ColorsConstants.kSecondaryTextColor,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w300,
-                      ),
+                    CustomTextWidget(title: 'Recipes recommendation'),
+                    CustomTextWidget(
+                      title:
+                          "Get your personalized recipes recommendation in a 4 steps",
+                      color: ColorsConstants.kSecondaryTextColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w300,
                     ),
                   ],
                 ),

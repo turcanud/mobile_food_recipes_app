@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constants/colors_constants.dart';
+import 'custom_text_widget.dart';
 
 class ProfileStartSection extends StatelessWidget {
   const ProfileStartSection({super.key});
@@ -14,21 +15,15 @@ class ProfileStartSection extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Hello, Joana",
-              style: TextStyle(
-                color: ColorsConstants.kPrimaryTextColor,
-                fontSize: 26,
-                fontWeight: FontWeight.w600,
-              ),
+            CustomTextWidget(
+              title: "Hello, Joana",
+              fontSize: 26,
+              fontWeight: FontWeight.w600,
             ),
-            Text(
-              "What do you want to cook today?",
-              style: TextStyle(
-                color: ColorsConstants.kSecondaryTextColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
+            CustomTextWidget(
+              title: "What do you want to cook today?",
+              color: ColorsConstants.kSecondaryTextColor,
+              fontWeight: FontWeight.w400,
             ),
           ],
         ),

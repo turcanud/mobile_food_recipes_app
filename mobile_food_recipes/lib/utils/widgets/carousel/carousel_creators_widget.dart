@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_food_recipes/utils/widgets/carousel_creator_card_widget.dart';
+import 'package:mobile_food_recipes/utils/widgets/carousel/carousel_creator_card_widget.dart';
 
 class CarouselCreatorsWidget extends StatelessWidget {
   const CarouselCreatorsWidget({super.key});
@@ -13,7 +13,7 @@ class CarouselCreatorsWidget extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, index) {
           return CarouselCreatorCardWidget(
-            creator: "James Nikidaw",
+            creator: "James Nikaniki",
             nrOfRecipes: "124",
             nrOfLikes: "41391",
           );
