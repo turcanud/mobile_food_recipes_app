@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mobile_food_recipes/utils/widgets/custom_text_widget.dart';
 
 import '../../core/constants/colors_constants.dart';
 import 'button_builder_widget.dart';
+import 'custom_text_widget.dart';
 
 class RecipesRecommendation extends StatelessWidget {
   const RecipesRecommendation({super.key});

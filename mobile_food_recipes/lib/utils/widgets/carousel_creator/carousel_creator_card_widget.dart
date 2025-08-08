@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_food_recipes/core/constants/images_constants.dart';
-import 'package:mobile_food_recipes/utils/widgets/carousel/carousel_creator_card_details_widget.dart';
-import 'package:mobile_food_recipes/utils/widgets/carousel/carousel_creator_card_image_widget.dart';
-import 'package:mobile_food_recipes/utils/widgets/custom_details_text_widget.dart';
-import 'package:mobile_food_recipes/utils/widgets/custom_text_widget.dart';
 
-import '../../../core/constants/colors_constants.dart';
+import 'carousel_creator_card_details_widget.dart';
+import 'carousel_creator_card_image_widget.dart';
 
 class CarouselCreatorCardWidget extends StatelessWidget {
+  final String imageUrl;
   final String creator;
-  final String nrOfRecipes;
-  final String nrOfLikes;
+  final int nrOfRecipes;
+  final int nrOfLikes;
 
   const CarouselCreatorCardWidget({
     super.key,
+    required this.imageUrl,
     required this.creator,
     required this.nrOfRecipes,
     required this.nrOfLikes,
@@ -35,7 +33,7 @@ class CarouselCreatorCardWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CarouselCreatorCardImageWidget(
-              imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+              imageUrl: imageUrl,
               creator: creator,
             ),
             SizedBox(height: 2.0),

@@ -4,7 +4,7 @@ import '../../../core/constants/colors_constants.dart';
 import '../custom_details_text_widget.dart';
 
 class CarouselCreatorCardDetailsWidget extends StatelessWidget {
-  final String nrOfRecipes;
+  final int nrOfRecipes;
   final String creator;
   const CarouselCreatorCardDetailsWidget({
     super.key,
@@ -24,7 +24,7 @@ class CarouselCreatorCardDetailsWidget extends StatelessWidget {
               color: ColorsConstants.kSecondaryTextColor,
             ),
             SizedBox(width: 8.0),
-            CustomDetailsTextWidget(text: nrOfRecipes),
+            CustomDetailsTextWidget(text: nrOfRecipes.toString()),
           ],
         ),
         Row(

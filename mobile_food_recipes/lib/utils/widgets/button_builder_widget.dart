@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_food_recipes/core/constants/colors_constants.dart';
-import 'package:mobile_food_recipes/utils/widgets/custom_text_widget.dart';
+
+import '../../core/constants/colors_constants.dart';
+import 'custom_text_widget.dart';
 
 class ButtonBuilder extends StatelessWidget {
   final String buttonText;

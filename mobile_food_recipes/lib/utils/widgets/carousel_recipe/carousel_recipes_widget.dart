@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../../view/base_view_model.dart';
 import 'carousel_recipe_card_widget.dart';
 
 class CarouselRecipesWidget extends StatelessWidget {
-  const CarouselRecipesWidget({super.key});
+  final List<RecipeViewModel> items;
+  const CarouselRecipesWidget({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 15.0),
       height: 320.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: items.length,
         itemBuilder: (context, index) {
-          return CarouselRecipeCardWidget(
-            title: "Spaghetti Bolognese",
-            type: "Pasta",
-            preparationTime: "30-45 minutes",
-            difficulty: "Medium",
-            creator: "Miriam belina",
-          );
+          return CarouselRecipeCardWidget(item: items[index]);
         },
       ),
     );
