@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../pages/details/details_page.dart';
-import '../../../view/base_view_model.dart';
+import '../../../view/recipe_view_model.dart';
 import 'carousel_recipe_card_details_widget.dart';
 import 'carousel_recipe_card_image_widget.dart';
 
@@ -14,20 +14,20 @@ class CarouselRecipeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => DetailsPage(recipe: item)),
+      // onTap: () => Get.to(() => DetailsPage()),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 8.0),
         width: 215,
         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16.0)),
         child: Column(
           children: [
-            CarouselRecipeCardImageWidget(imageUrl: item.imageUrl),
+            CarouselRecipeCardImageWidget(imageUrl: item.image),
             CarouselRecipeCardDetailsWidget(
               title: item.title,
-              type: item.type,
-              preparationTime: item.preparationTime,
-              difficulty: item.difficulty,
-              creator: item.creator,
+              type: item.imageType,
+              preparationTime: "30 min",
+              difficulty: "medium",
+              creator: "Mikolaj",
             ),
           ],
         ),

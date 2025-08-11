@@ -6,18 +6,18 @@ class SectionViewModel extends BaseViewModel {
   SectionViewModel({required this.title, this.openSection = true});
 }
 
-class RecipeViewModel extends BaseViewModel {
+class LocalRecipeViewModel extends BaseViewModel {
   final String imageUrl;
   final String title;
   final String description;
   final String type;
   final String preparationTime;
   final String difficulty;
-  final CreatorViewModel creator;
-  final List<IngredientViewModel> ingredients;
-  final List<InstructionViewModel> instructions;
+  final LocalCreatorViewModel creator;
+  final List<LocalIngredientViewModel> ingredients;
+  final List<LocalInstructionViewModel> instructions;
 
-  RecipeViewModel({
+  LocalRecipeViewModel({
     required this.imageUrl,
     required this.title,
     required this.description,
@@ -30,13 +30,13 @@ class RecipeViewModel extends BaseViewModel {
   });
 }
 
-class CreatorViewModel extends BaseViewModel {
+class LocalCreatorViewModel extends BaseViewModel {
   final String imageUrl;
   final String name;
   final int nrOfRecipes;
   final int nrOfLikes;
 
-  CreatorViewModel({
+  LocalCreatorViewModel({
     required this.imageUrl,
     required this.name,
     required this.nrOfRecipes,
@@ -44,13 +44,13 @@ class CreatorViewModel extends BaseViewModel {
   });
 }
 
-class IngredientViewModel extends BaseViewModel {
+class LocalIngredientViewModel extends BaseViewModel {
   final String ingredient;
-  IngredientViewModel({required this.ingredient});
+  LocalIngredientViewModel({required this.ingredient});
 }
 
-class InstructionViewModel extends BaseViewModel {
+class LocalInstructionViewModel extends BaseViewModel {
   final String step;
   final List<String> subSteps;
-  InstructionViewModel({required this.step, required this.subSteps});
+  LocalInstructionViewModel({required this.step, required this.subSteps});
 }

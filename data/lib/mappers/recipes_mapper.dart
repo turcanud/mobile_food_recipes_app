@@ -17,6 +17,7 @@ extension RecipesMapper on List<RecipeApiDto> {
                 unit: ingredient.unit,
                 unitLong: ingredient.unitLong,
                 unitShort: ingredient.unitShort,
+                aisle: ingredient.aisle,
                 name: ingredient.name,
                 original: ingredient.original,
                 originalName: ingredient.originalName,

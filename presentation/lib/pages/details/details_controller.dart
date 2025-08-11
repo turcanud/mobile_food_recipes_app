@@ -13,8 +13,8 @@ class DetailsController extends GetxController {
   void initItems(
     String imageUrl,
     String description,
-    List<InstructionViewModel> instructions,
-    List<IngredientViewModel> ingredients,
+    List<LocalInstructionViewModel> instructions,
+    List<LocalIngredientViewModel> ingredients,
   ) {
     items.value = [
       TopDetailsSectionViewModel(imageUrl: imageUrl, description: description),

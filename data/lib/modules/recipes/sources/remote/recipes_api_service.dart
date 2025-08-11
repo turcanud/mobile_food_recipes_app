@@ -17,6 +17,5 @@ abstract class RecipesApiService {
     @Query('query') String? query,
     @Query('instructionsRequired') bool? instructionsRequired,
     @Query('fillIngredients') bool? fillIngredients,
-    @Query('apiKey') String? apiKey,
   });
 }

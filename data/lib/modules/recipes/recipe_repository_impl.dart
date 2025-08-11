@@ -14,15 +14,12 @@ class RecipeRepositoryImpl implements RecipeRepository {
   RecipeRepositoryImpl(this._recipesApiService);
 
   @override
-  Future<Either<Failure, List<RecipeEntity>>> getRecipes({
-    required GetRecipesParams params,
-  }) async {
+  Future<Either<Failure, List<RecipeEntity>>> getRecipes({required GetRecipesParams params}) async {
     try {
       final response = await _recipesApiService.getRecipesApi(
         query: params.query,
         instructionsRequired: params.instructionsRequired,
         fillIngredients: params.fillIngredients,
-        apiKey: params.apiKey,
       );
       final recipes = response.results!.toEntities();
       return Right(recipes);
@@ -30,11 +27,7 @@ class RecipeRepositoryImpl implements RecipeRepository {
       if (e is DioException) {
         return Left(ServerFailure(errorMessage: e.message.toString()));
       }
-      return Left(
-        ServerFailure(
-          errorMessage: "An unexpected error occurred ${e.toString()}",
-        ),
-      );
+      return Left(ServerFailure(errorMessage: "An unexpected error occurred ${e.toString()}"));
     }
   }
 }

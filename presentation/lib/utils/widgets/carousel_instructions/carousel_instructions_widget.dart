@@ -4,7 +4,7 @@ import '../../../view/base_view_model.dart';
 import 'carousel_instruction_card_widget.dart';
 
 class CarouselInstructionsViewModel extends BaseViewModel {
-  final List<InstructionViewModel> instructions;
+  final List<LocalInstructionViewModel> instructions;
 
   CarouselInstructionsViewModel({required this.instructions});
 }
@@ -23,9 +23,7 @@ class CarouselInstructionsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: List.generate(
             model.instructions.length,
-            (index) => CarouselInstructionCardWidget(
-              instruction: model.instructions[index],
-            ),
+            (index) => CarouselInstructionCardWidget(instruction: model.instructions[index]),
           ),
         ),
       ),

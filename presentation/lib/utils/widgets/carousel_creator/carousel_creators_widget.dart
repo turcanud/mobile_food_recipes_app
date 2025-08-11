@@ -4,7 +4,7 @@ import '../../../view/base_view_model.dart';
 import 'carousel_creator_card_widget.dart';
 
 class CarouselCreatorsViewModel extends BaseViewModel {
-  final List<CreatorViewModel> creators;
+  final List<LocalCreatorViewModel> creators;
 
   CarouselCreatorsViewModel({required this.creators});
 }

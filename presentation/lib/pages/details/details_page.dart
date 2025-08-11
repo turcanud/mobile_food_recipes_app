@@ -8,12 +8,12 @@ import '../../utils/widgets/custom_text_widget.dart';
 import '../../utils/widgets/details_page_section_title_widget.dart';
 import '../../utils/widgets/ingredients_box_widget.dart';
 import '../../utils/widgets/top_details_section.dart';
-import '../../view/base_view_model.dart';
 import 'details_controller.dart';
 
 class DetailsPage extends StatefulWidget {
-  final RecipeViewModel recipe;
-  const DetailsPage({super.key, required this.recipe});
+  const DetailsPage({super.key});
+
+  get recipe => null;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();

@@ -7,6 +7,7 @@ Future<void> apiServiceInjectionContainer() async {
   final sl = GetIt.instance;
 
   var dioConfiguration = BaseOptions(
+    headers: {"x-api-key": ApiConstants.kApiKey},
     baseUrl: ApiConstants.kBaseUrl,
     connectTimeout: Duration(seconds: 5),
     receiveTimeout: Duration(seconds: 3),
@@ -15,16 +16,8 @@ Future<void> apiServiceInjectionContainer() async {
   var dioClient = Dio(dioConfiguration);
 
   dioClient.interceptors.add(
-    LogInterceptor(
-      request: true,
-      responseHeader: true,
-      requestBody: true,
-      requestHeader: true,
-      responseBody: true,
-    ),
+    LogInterceptor(request: true, responseHeader: true, requestBody: true, requestHeader: true, responseBody: true),
   );
 
-  sl.registerLazySingleton<RecipesApiService>(
-    () => RecipesApiService(dioClient),
-  );
+  sl.registerLazySingleton<RecipesApiService>(() => RecipesApiService(dioClient));
 }

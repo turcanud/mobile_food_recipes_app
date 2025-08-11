@@ -24,14 +24,12 @@ class _RecipesApiService implements RecipesApiService {
     String? query,
     bool? instructionsRequired,
     bool? fillIngredients,
-    String? apiKey,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'query': query,
       r'instructionsRequired': instructionsRequired,
       r'fillIngredients': fillIngredients,
-      r'apiKey': apiKey,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

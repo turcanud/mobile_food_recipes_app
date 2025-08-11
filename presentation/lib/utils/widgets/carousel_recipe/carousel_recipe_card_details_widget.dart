@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors_constants.dart';
 import '../../../core/constants/images_constants.dart';
-import '../../../view/base_view_model.dart';
 import '../custom_details_text_widget.dart';
 import '../custom_text_widget.dart';
 
@@ -11,7 +10,7 @@ class CarouselRecipeCardDetailsWidget extends StatelessWidget {
   final String type;
   final String preparationTime;
   final String difficulty;
-  final CreatorViewModel creator;
+  final String creator;
   const CarouselRecipeCardDetailsWidget({
     super.key,
     required this.title,
@@ -34,22 +33,14 @@ class CarouselRecipeCardDetailsWidget extends StatelessWidget {
           SizedBox(height: 6.0),
           Row(
             children: [
-              Icon(
-                Icons.timer_outlined,
-                size: 23,
-                color: ColorsConstants.kSecondaryTextColor,
-              ),
+              Icon(Icons.timer_outlined, size: 23, color: ColorsConstants.kSecondaryTextColor),
               SizedBox(width: 8.0),
               CustomDetailsTextWidget(text: preparationTime),
             ],
           ),
           Row(
             children: [
-              Icon(
-                Icons.badge_outlined,
-                size: 23,
-                color: ColorsConstants.kSecondaryTextColor,
-              ),
+              Icon(Icons.badge_outlined, size: 23, color: ColorsConstants.kSecondaryTextColor),
               SizedBox(width: 8.0),
               CustomDetailsTextWidget(text: difficulty),
             ],
@@ -66,7 +57,7 @@ class CarouselRecipeCardDetailsWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 8.0),
-              CustomDetailsTextWidget(text: creator.name),
+              CustomDetailsTextWidget(text: creator),
             ],
           ),
         ],
