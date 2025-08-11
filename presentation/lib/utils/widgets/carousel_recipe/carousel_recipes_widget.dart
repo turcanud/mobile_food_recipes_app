@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../view/base_view_model.dart';
 import 'carousel_recipe_card_widget.dart';
 
+class CarouselRecipesViewModel extends BaseViewModel {
+  final List<RecipeViewModel> recipes;
+  CarouselRecipesViewModel({required this.recipes});
+}
+
 class CarouselRecipesWidget extends StatelessWidget {
-  final List<RecipeViewModel> items;
-  const CarouselRecipesWidget({super.key, required this.items});
+  final CarouselRecipesViewModel model;
+  const CarouselRecipesWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +19,9 @@ class CarouselRecipesWidget extends StatelessWidget {
       height: 320.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: items.length,
+        itemCount: model.recipes.length,
         itemBuilder: (context, index) {
-          return CarouselRecipeCardWidget(item: items[index]);
+          return CarouselRecipeCardWidget(item: model.recipes[index]);
         },
       ),
     );

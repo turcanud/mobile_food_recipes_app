@@ -5,8 +5,7 @@ import '../../core/constants/colors_constants.dart';
 import '../../utils/widgets/carousel_creator/carousel_creators_widget.dart';
 import '../../utils/widgets/carousel_recipe/carousel_recipes_widget.dart';
 import '../../utils/widgets/header_section_widget.dart';
-import '../../utils/widgets/profile_start_section_widget.dart';
-import '../../utils/widgets/recipes_recommendation_widget.dart';
+import '../../utils/widgets/top_home_page_widget.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Get.lazyPut(() => HomeController());
+    controller.initItems();
   }
 
   @override
@@ -30,37 +30,22 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: ColorsConstants.kBackgroundColor,
       body: SafeArea(
-        child: ListView(
-          children: [
-            Stack(
-              children: [
-                Positioned.fill(
-                  child: Column(
-                    children: [Container(height: 220.0, color: Colors.white)],
-                  ),
-                ),
-                Column(
-                  children: [
-                    Container(
-                      color: Colors.white,
-                      padding: EdgeInsets.symmetric(
-                        vertical: 30.0,
-                        horizontal: 24.0,
-                      ),
-                      child: ProfileStartSection(),
-                    ),
-                    RecipesRecommendation(),
-                  ],
-                ),
-              ],
-            ),
-            HeaderSectionWidget(title: "Popular recipes"),
-            CarouselRecipesWidget(items: controller.recipes),
-            HeaderSectionWidget(title: "Popular creators"),
-            CarouselCreatorsWidget(items: controller.creators),
-            HeaderSectionWidget(title: "Featured"),
-            CarouselCreatorsWidget(items: controller.creators),
-          ],
+        child: ListView.builder(
+          itemCount: controller.items.length,
+          itemBuilder: (context, index) {
+            final item = controller.items[index];
+            if (item is TopHomePageViewModel) {
+              return TopHomePageWidget();
+            } else if (item is HeaderSectionViewModel) {
+              return HeaderSectionWidget(model: item);
+            } else if (item is CarouselRecipesViewModel) {
+              return CarouselRecipesWidget(model: item);
+            } else if (item is CarouselCreatorsViewModel) {
+              return CarouselCreatorsWidget(model: item);
+            } else {
+              return const SizedBox.shrink();
+            }
+          },
         ),
       ),
     );

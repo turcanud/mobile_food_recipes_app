@@ -14,14 +14,11 @@ class CarouselRecipeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => DetailsPage(item: item)),
+      onTap: () => Get.to(() => DetailsPage(recipe: item)),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 8.0),
         width: 215,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16.0),
-        ),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16.0)),
         child: Column(
           children: [
             CarouselRecipeCardImageWidget(imageUrl: item.imageUrl),

@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../view/base_view_model.dart';
 import 'carousel_instruction_card_widget.dart';
 
-class CarouselInstructionsWidget extends StatelessWidget {
+class CarouselInstructionsViewModel extends BaseViewModel {
   final List<InstructionViewModel> instructions;
-  const CarouselInstructionsWidget({super.key, required this.instructions});
+
+  CarouselInstructionsViewModel({required this.instructions});
+}
+
+class CarouselInstructionsWidget extends StatelessWidget {
+  final CarouselInstructionsViewModel model;
+  const CarouselInstructionsWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +22,10 @@ class CarouselInstructionsWidget extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: List.generate(
-            instructions.length,
-            (index) =>
-                CarouselInstructionCardWidget(instruction: instructions[index]),
+            model.instructions.length,
+            (index) => CarouselInstructionCardWidget(
+              instruction: model.instructions[index],
+            ),
           ),
         ),
       ),

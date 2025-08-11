@@ -1,9 +1,27 @@
 import 'package:get/get.dart';
 
 import '../../core/constants/images_constants.dart';
+import '../../utils/widgets/carousel_creator/carousel_creators_widget.dart';
+import '../../utils/widgets/carousel_recipe/carousel_recipes_widget.dart';
+import '../../utils/widgets/header_section_widget.dart';
+import '../../utils/widgets/top_home_page_widget.dart';
 import '../../view/base_view_model.dart';
 
 class HomeController extends GetxController {
+  RxList<BaseViewModel> items = RxList<BaseViewModel>([]);
+
+  void initItems() {
+    items.value = [
+      TopHomePageViewModel(),
+      HeaderSectionViewModel(title: "Popular recipes"),
+      CarouselRecipesViewModel(recipes: recipes),
+      HeaderSectionViewModel(title: "Popular creators"),
+      CarouselCreatorsViewModel(creators: creators),
+      HeaderSectionViewModel(title: "Featured"),
+      CarouselCreatorsViewModel(creators: creators),
+    ];
+  }
+
   RxList<RecipeViewModel> recipes = RxList<RecipeViewModel>([
     RecipeViewModel(
       imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
@@ -49,10 +67,7 @@ class HomeController extends GetxController {
         ),
         InstructionViewModel(
           step: 'Combine and Serve',
-          subSteps: [
-            'Toss spaghetti with sauce or serve sauce on top.',
-            'Garnish with grated cheese or herbs.',
-          ],
+          subSteps: ['Toss spaghetti with sauce or serve sauce on top.', 'Garnish with grated cheese or herbs.'],
         ),
       ],
     ),
@@ -71,9 +86,7 @@ class HomeController extends GetxController {
         nrOfLikes: 42134,
       ),
       ingredients: [
-        IngredientViewModel(
-          ingredient: '4 beef steak cuts (sirloin or ribeye)',
-        ),
+        IngredientViewModel(ingredient: '4 beef steak cuts (sirloin or ribeye)'),
         IngredientViewModel(ingredient: 'Salt and black pepper to taste'),
         IngredientViewModel(ingredient: '2 tbsp olive oil'),
         IngredientViewModel(ingredient: '2 garlic cloves, minced'),
@@ -83,10 +96,7 @@ class HomeController extends GetxController {
       instructions: [
         InstructionViewModel(
           step: 'Prepare the Steaks',
-          subSteps: [
-            'Take steaks out of the fridge 30 minutes before cooking.',
-            'Season with salt and black pepper.',
-          ],
+          subSteps: ['Take steaks out of the fridge 30 minutes before cooking.', 'Season with salt and black pepper.'],
         ),
         InstructionViewModel(
           step: 'Cook the Steaks',
@@ -98,10 +108,7 @@ class HomeController extends GetxController {
         ),
         InstructionViewModel(
           step: 'Rest and Serve',
-          subSteps: [
-            'Remove steaks and let rest for 5 minutes.',
-            'Slice and serve with your favorite sides.',
-          ],
+          subSteps: ['Remove steaks and let rest for 5 minutes.', 'Slice and serve with your favorite sides.'],
         ),
       ],
     ),
@@ -173,17 +180,11 @@ class HomeController extends GetxController {
       instructions: [
         InstructionViewModel(
           step: 'Marinate the Chicken',
-          subSteps: [
-            'Combine chicken with yogurt and tikka masala paste.',
-            'Refrigerate for at least 30 minutes.',
-          ],
+          subSteps: ['Combine chicken with yogurt and tikka masala paste.', 'Refrigerate for at least 30 minutes.'],
         ),
         InstructionViewModel(
           step: 'Cook the Base',
-          subSteps: [
-            'Sauté onion and garlic in oil until golden.',
-            'Add marinated chicken and cook until sealed.',
-          ],
+          subSteps: ['Sauté onion and garlic in oil until golden.', 'Add marinated chicken and cook until sealed.'],
         ),
         InstructionViewModel(
           step: 'Simmer the Sauce',
@@ -220,10 +221,7 @@ class HomeController extends GetxController {
       instructions: [
         InstructionViewModel(
           step: 'Prepare the Rice',
-          subSteps: [
-            'Cook sushi rice and let it cool slightly.',
-            'Mix with vinegar, sugar, and salt.',
-          ],
+          subSteps: ['Cook sushi rice and let it cool slightly.', 'Mix with vinegar, sugar, and salt.'],
         ),
         InstructionViewModel(
           step: 'Prepare the Fillings',

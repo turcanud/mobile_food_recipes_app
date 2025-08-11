@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/view/base_view_model.dart';
 
 import 'custom_text_widget.dart';
 
-class DetailsPageSectionTitleWidget extends StatelessWidget {
+class DetailsPageSectionTitleViewModel extends BaseViewModel {
   final String title;
-  const DetailsPageSectionTitleWidget({super.key, required this.title});
+  DetailsPageSectionTitleViewModel({required this.title});
+}
+
+class DetailsPageSectionTitleWidget extends StatelessWidget {
+  final DetailsPageSectionTitleViewModel model;
+  const DetailsPageSectionTitleWidget({super.key, required this.model});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +18,7 @@ class DetailsPageSectionTitleWidget extends StatelessWidget {
       child: Row(
         children: [
           CustomTextWidget(
-            title: title,
+            title: model.title,
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
           ),

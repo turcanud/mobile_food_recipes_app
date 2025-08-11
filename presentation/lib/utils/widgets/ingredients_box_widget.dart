@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import '../../core/constants/colors_constants.dart';
 import '../../view/base_view_model.dart';
 
-class IngredientsBoxWidget extends StatelessWidget {
+class IngredientsBoxViewModel extends BaseViewModel {
   final List<IngredientViewModel> ingredients;
-  const IngredientsBoxWidget({super.key, required this.ingredients});
+  IngredientsBoxViewModel({required this.ingredients});
+}
+
+class IngredientsBoxWidget extends StatelessWidget {
+  final IngredientsBoxViewModel model;
+  const IngredientsBoxWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +23,11 @@ class IngredientsBoxWidget extends StatelessWidget {
       ),
       child: Column(
         children: List.generate(
-          ingredients.length,
+          model.ingredients.length,
           (index) => ListTile(
             leading: Icon(Icons.circle_outlined, color: Color(0xffEBEBEB)),
             title: Text(
-              ingredients[index].ingredient,
+              model.ingredients[index].ingredient,
               style: TextStyle(
                 color: ColorsConstants.kPrimaryTextColor,
                 fontSize: 13.0,

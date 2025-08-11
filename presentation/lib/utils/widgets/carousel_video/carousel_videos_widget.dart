@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/view/base_view_model.dart';
 
 import 'carousel_video_card_widget.dart';
+
+class CarouselVideosViewModel extends BaseViewModel {}
 
 class CarouselVideosWidget extends StatelessWidget {
   const CarouselVideosWidget({super.key});

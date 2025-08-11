@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../core/constants/colors_constants.dart';
 import '../../utils/widgets/carousel_instructions/carousel_instructions_widget.dart';
@@ -6,64 +7,60 @@ import '../../utils/widgets/carousel_video/carousel_videos_widget.dart';
 import '../../utils/widgets/custom_text_widget.dart';
 import '../../utils/widgets/details_page_section_title_widget.dart';
 import '../../utils/widgets/ingredients_box_widget.dart';
+import '../../utils/widgets/top_details_section.dart';
 import '../../view/base_view_model.dart';
+import 'details_controller.dart';
 
-class DetailsPage extends StatelessWidget {
-  final RecipeViewModel item;
-  const DetailsPage({super.key, required this.item});
+class DetailsPage extends StatefulWidget {
+  final RecipeViewModel recipe;
+  const DetailsPage({super.key, required this.recipe});
+
+  @override
+  State<DetailsPage> createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends State<DetailsPage> {
+  DetailsController get controller => Get.find();
+
+  @override
+  void initState() {
+    super.initState();
+    Get.lazyPut(() => DetailsController());
+    controller.initItems(
+      widget.recipe.imageUrl,
+      widget.recipe.description,
+      widget.recipe.instructions,
+      widget.recipe.ingredients,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomTextWidget(title: item.title),
+        title: CustomTextWidget(title: widget.recipe.title),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
       ),
       backgroundColor: ColorsConstants.kBackgroundColor,
-      body: ListView(
-        children: [
-          Container(
-            color: Colors.white,
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    child: Image.asset(
-                      item.imageUrl,
-                      height: 290,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 24.0,
-                    vertical: 16.0,
-                  ),
-                  child: Text(
-                    item.description,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14.0,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    maxLines: 2,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          DetailsPageSectionTitleWidget(title: "Ingredients"),
-          IngredientsBoxWidget(ingredients: item.ingredients),
-          DetailsPageSectionTitleWidget(title: "How to video"),
-          CarouselVideosWidget(),
-          DetailsPageSectionTitleWidget(title: "Instructions"),
-          CarouselInstructionsWidget(instructions: item.instructions),
-        ],
+      body: ListView.builder(
+        itemCount: controller.items.length,
+        itemBuilder: (context, index) {
+          final item = controller.items[index];
+          if (item is DetailsPageSectionTitleViewModel) {
+            return DetailsPageSectionTitleWidget(model: item);
+          } else if (item is IngredientsBoxViewModel) {
+            return IngredientsBoxWidget(model: item);
+          } else if (item is CarouselVideosViewModel) {
+            return CarouselVideosWidget();
+          } else if (item is CarouselInstructionsViewModel) {
+            return CarouselInstructionsWidget(model: item);
+          } else if (item is TopDetailsSectionViewModel) {
+            return TopDetailsSection(model: item);
+          } else {
+            return SizedBox.shrink();
+          }
+        },
       ),
     );
   }
