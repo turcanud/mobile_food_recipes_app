@@ -23,58 +23,91 @@ Map<String, dynamic> _$FullApiDtoToJson(_FullApiDto instance) =>
       'totalResults': instance.totalResults,
     };
 
-_IngredientApiDto _$IngredientApiDtoFromJson(Map<String, dynamic> json) =>
-    _IngredientApiDto(
-      id: (json['id'] as num?)?.toInt(),
-      amount: (json['amount'] as num?)?.toInt(),
-      unit: json['unit'] as String?,
-      unitLong: json['unitLong'] as String?,
-      unitShort: json['unitShort'] as String?,
-      aisle: json['aisle'] as String?,
-      name: json['name'] as String?,
-      original: json['original'] as String?,
-      originalName: json['originalName'] as String?,
-      meta: (json['meta'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      image: json['image'] as String?,
-    );
-
-Map<String, dynamic> _$IngredientApiDtoToJson(_IngredientApiDto instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'amount': instance.amount,
-      'unit': instance.unit,
-      'unitLong': instance.unitLong,
-      'unitShort': instance.unitShort,
-      'aisle': instance.aisle,
-      'name': instance.name,
-      'original': instance.original,
-      'originalName': instance.originalName,
-      'meta': instance.meta,
-      'image': instance.image,
-    };
-
 _RecipeApiDto _$RecipeApiDtoFromJson(Map<String, dynamic> json) =>
     _RecipeApiDto(
       id: (json['id'] as num?)?.toInt(),
-      usedIngredientCount: (json['usedIngredientCount'] as num?)?.toInt(),
-      missedIngredientCount: (json['missedIngredientCount'] as num?)?.toInt(),
-      missedIngredients: (json['missedIngredients'] as List<dynamic>?)
-          ?.map((e) => IngredientApiDto.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      likes: (json['likes'] as num?)?.toInt(),
-      title: json['title'] as String?,
       image: json['image'] as String?,
-      imageType: json['imageType'] as String?,
+      title: json['title'] as String?,
+      readyInMinutes: (json['readyInMinutes'] as num?)?.toInt(),
+      sourceUrl: json['sourceUrl'] as String?,
+      healthScore: (json['healthScore'] as num?)?.toInt(),
+      sourceName: json['sourceName'] as String?,
     );
 
 Map<String, dynamic> _$RecipeApiDtoToJson(_RecipeApiDto instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'usedIngredientCount': instance.usedIngredientCount,
-      'missedIngredientCount': instance.missedIngredientCount,
-      'missedIngredients': instance.missedIngredients,
-      'likes': instance.likes,
-      'title': instance.title,
       'image': instance.image,
-      'imageType': instance.imageType,
+      'title': instance.title,
+      'readyInMinutes': instance.readyInMinutes,
+      'sourceUrl': instance.sourceUrl,
+      'healthScore': instance.healthScore,
+      'sourceName': instance.sourceName,
     };
+
+_RecipeDetailsApiDto _$RecipeDetailsApiDtoFromJson(Map<String, dynamic> json) =>
+    _RecipeDetailsApiDto(
+      id: (json['id'] as num?)?.toInt(),
+      image: json['image'] as String?,
+      title: json['title'] as String?,
+      sourceUrl: json['sourceUrl'] as String?,
+      extendedIngredients: (json['extendedIngredients'] as List<dynamic>?)
+          ?.map((e) => IngredientApiDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      summary: json['summary'] as String?,
+      analyzedInstructions: json['analyzedInstructions'] as List<dynamic>?,
+    );
+
+Map<String, dynamic> _$RecipeDetailsApiDtoToJson(
+  _RecipeDetailsApiDto instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'image': instance.image,
+  'title': instance.title,
+  'sourceUrl': instance.sourceUrl,
+  'extendedIngredients': instance.extendedIngredients,
+  'summary': instance.summary,
+  'analyzedInstructions': instance.analyzedInstructions,
+};
+
+_IngredientApiDto _$IngredientApiDtoFromJson(Map<String, dynamic> json) =>
+    _IngredientApiDto(
+      id: (json['id'] as num?)?.toInt(),
+      original: json['original'] as String?,
+    );
+
+Map<String, dynamic> _$IngredientApiDtoToJson(_IngredientApiDto instance) =>
+    <String, dynamic>{'id': instance.id, 'original': instance.original};
+
+_InstructionApiDto _$InstructionApiDtoFromJson(Map<String, dynamic> json) =>
+    _InstructionApiDto(
+      steps: (json['steps'] as List<dynamic>?)
+          ?.map((e) => StepApiDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$InstructionApiDtoToJson(_InstructionApiDto instance) =>
+    <String, dynamic>{'steps': instance.steps};
+
+_StepApiDto _$StepApiDtoFromJson(Map<String, dynamic> json) => _StepApiDto(
+  number: (json['number'] as num?)?.toInt(),
+  step: json['step'] as String?,
+  ingredients: (json['ingredients'] as List<dynamic>?)
+      ?.map((e) => StepIngredientApiDto.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
+
+Map<String, dynamic> _$StepApiDtoToJson(_StepApiDto instance) =>
+    <String, dynamic>{
+      'number': instance.number,
+      'step': instance.step,
+      'ingredients': instance.ingredients,
+    };
+
+_StepIngredientApiDto _$StepIngredientApiDtoFromJson(
+  Map<String, dynamic> json,
+) => _StepIngredientApiDto(name: json['name'] as String?);
+
+Map<String, dynamic> _$StepIngredientApiDtoToJson(
+  _StepIngredientApiDto instance,
+) => <String, dynamic>{'name': instance.name};

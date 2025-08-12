@@ -14,8 +14,15 @@ abstract class RecipesApiService {
 
   @GET('/complexSearch')
   Future<FullApiDto> getRecipesApi({
-    @Query('query') String? query,
-    @Query('instructionsRequired') bool? instructionsRequired,
-    @Query('fillIngredients') bool? fillIngredients,
+    @Query('query') required String query,
+    @Query('addRecipeInformation') bool? addRecipeInformation,
+  });
+
+  @GET('/{id}/information')
+  Future<RecipeDetailsApiDto> getRecipeByIdApi({
+    @Path('id') required int id,
+    @Query('includeNutrition') bool? includeNutrition,
+    @Query('addWinePairing') bool? addWinePairing,
+    @Query('addTasteData') bool? addTasteData,
   });
 }

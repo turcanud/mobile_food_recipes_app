@@ -21,15 +21,13 @@ class _RecipesApiService implements RecipesApiService {
 
   @override
   Future<FullApiDto> getRecipesApi({
-    String? query,
-    bool? instructionsRequired,
-    bool? fillIngredients,
+    required String query,
+    bool? addRecipeInformation,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'query': query,
-      r'instructionsRequired': instructionsRequired,
-      r'fillIngredients': fillIngredients,
+      r'addRecipeInformation': addRecipeInformation,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
@@ -48,6 +46,43 @@ class _RecipesApiService implements RecipesApiService {
     late FullApiDto _value;
     try {
       _value = FullApiDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<RecipeDetailsApiDto> getRecipeByIdApi({
+    required int id,
+    bool? includeNutrition,
+    bool? addWinePairing,
+    bool? addTasteData,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'includeNutrition': includeNutrition,
+      r'addWinePairing': addWinePairing,
+      r'addTasteData': addTasteData,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<RecipeDetailsApiDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/${id}/information',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late RecipeDetailsApiDto _value;
+    try {
+      _value = RecipeDetailsApiDto.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

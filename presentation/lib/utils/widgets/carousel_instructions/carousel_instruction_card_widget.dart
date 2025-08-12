@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../view/base_view_model.dart';
+import '../../../view/instruction_view_model.dart';
 import '../custom_text_widget.dart';
 
 class CarouselInstructionCardWidget extends StatelessWidget {
-  final LocalInstructionViewModel instruction;
-  const CarouselInstructionCardWidget({super.key, required this.instruction});
+  final List<StepViewModel> steps;
+  const CarouselInstructionCardWidget({super.key, required this.steps});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,8 @@ class CarouselInstructionCardWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomTextWidget(title: instruction.step),
-          Column(
-            children: List.generate(instruction.subSteps.length, (index) => _buildStep(instruction.subSteps[index])),
-          ),
+          const CustomTextWidget(title: 'Instructions'),
+          Column(children: List.generate(steps.length, (index) => _buildStep(steps[index].step))),
         ],
       ),
     );

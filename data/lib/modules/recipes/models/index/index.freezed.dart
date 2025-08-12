@@ -293,310 +293,9 @@ as int?,
 
 
 /// @nodoc
-mixin _$IngredientApiDto {
-
- int? get id; int? get amount; String? get unit; String? get unitLong; String? get unitShort; String? get aisle; String? get name; String? get original; String? get originalName; List<String>? get meta; String? get image;
-/// Create a copy of IngredientApiDto
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$IngredientApiDtoCopyWith<IngredientApiDto> get copyWith => _$IngredientApiDtoCopyWithImpl<IngredientApiDto>(this as IngredientApiDto, _$identity);
-
-  /// Serializes this IngredientApiDto to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is IngredientApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.unitLong, unitLong) || other.unitLong == unitLong)&&(identical(other.unitShort, unitShort) || other.unitShort == unitShort)&&(identical(other.aisle, aisle) || other.aisle == aisle)&&(identical(other.name, name) || other.name == name)&&(identical(other.original, original) || other.original == original)&&(identical(other.originalName, originalName) || other.originalName == originalName)&&const DeepCollectionEquality().equals(other.meta, meta)&&(identical(other.image, image) || other.image == image));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,amount,unit,unitLong,unitShort,aisle,name,original,originalName,const DeepCollectionEquality().hash(meta),image);
-
-@override
-String toString() {
-  return 'IngredientApiDto(id: $id, amount: $amount, unit: $unit, unitLong: $unitLong, unitShort: $unitShort, aisle: $aisle, name: $name, original: $original, originalName: $originalName, meta: $meta, image: $image)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $IngredientApiDtoCopyWith<$Res>  {
-  factory $IngredientApiDtoCopyWith(IngredientApiDto value, $Res Function(IngredientApiDto) _then) = _$IngredientApiDtoCopyWithImpl;
-@useResult
-$Res call({
- int? id, int? amount, String? unit, String? unitLong, String? unitShort, String? aisle, String? name, String? original, String? originalName, List<String>? meta, String? image
-});
-
-
-
-
-}
-/// @nodoc
-class _$IngredientApiDtoCopyWithImpl<$Res>
-    implements $IngredientApiDtoCopyWith<$Res> {
-  _$IngredientApiDtoCopyWithImpl(this._self, this._then);
-
-  final IngredientApiDto _self;
-  final $Res Function(IngredientApiDto) _then;
-
-/// Create a copy of IngredientApiDto
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? amount = freezed,Object? unit = freezed,Object? unitLong = freezed,Object? unitShort = freezed,Object? aisle = freezed,Object? name = freezed,Object? original = freezed,Object? originalName = freezed,Object? meta = freezed,Object? image = freezed,}) {
-  return _then(_self.copyWith(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int?,amount: freezed == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int?,unit: freezed == unit ? _self.unit : unit // ignore: cast_nullable_to_non_nullable
-as String?,unitLong: freezed == unitLong ? _self.unitLong : unitLong // ignore: cast_nullable_to_non_nullable
-as String?,unitShort: freezed == unitShort ? _self.unitShort : unitShort // ignore: cast_nullable_to_non_nullable
-as String?,aisle: freezed == aisle ? _self.aisle : aisle // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,original: freezed == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
-as String?,originalName: freezed == originalName ? _self.originalName : originalName // ignore: cast_nullable_to_non_nullable
-as String?,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
-as List<String>?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-}
-
-
-/// Adds pattern-matching-related methods to [IngredientApiDto].
-extension IngredientApiDtoPatterns on IngredientApiDto {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _IngredientApiDto value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _IngredientApiDto() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _IngredientApiDto value)  $default,){
-final _that = this;
-switch (_that) {
-case _IngredientApiDto():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _IngredientApiDto value)?  $default,){
-final _that = this;
-switch (_that) {
-case _IngredientApiDto() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  int? amount,  String? unit,  String? unitLong,  String? unitShort,  String? aisle,  String? name,  String? original,  String? originalName,  List<String>? meta,  String? image)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _IngredientApiDto() when $default != null:
-return $default(_that.id,_that.amount,_that.unit,_that.unitLong,_that.unitShort,_that.aisle,_that.name,_that.original,_that.originalName,_that.meta,_that.image);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  int? amount,  String? unit,  String? unitLong,  String? unitShort,  String? aisle,  String? name,  String? original,  String? originalName,  List<String>? meta,  String? image)  $default,) {final _that = this;
-switch (_that) {
-case _IngredientApiDto():
-return $default(_that.id,_that.amount,_that.unit,_that.unitLong,_that.unitShort,_that.aisle,_that.name,_that.original,_that.originalName,_that.meta,_that.image);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  int? amount,  String? unit,  String? unitLong,  String? unitShort,  String? aisle,  String? name,  String? original,  String? originalName,  List<String>? meta,  String? image)?  $default,) {final _that = this;
-switch (_that) {
-case _IngredientApiDto() when $default != null:
-return $default(_that.id,_that.amount,_that.unit,_that.unitLong,_that.unitShort,_that.aisle,_that.name,_that.original,_that.originalName,_that.meta,_that.image);case _:
-  return null;
-
-}
-}
-
-}
-
-/// @nodoc
-@JsonSerializable()
-
-class _IngredientApiDto implements IngredientApiDto {
-  const _IngredientApiDto({this.id, this.amount, this.unit, this.unitLong, this.unitShort, this.aisle, this.name, this.original, this.originalName, final  List<String>? meta, this.image}): _meta = meta;
-  factory _IngredientApiDto.fromJson(Map<String, dynamic> json) => _$IngredientApiDtoFromJson(json);
-
-@override final  int? id;
-@override final  int? amount;
-@override final  String? unit;
-@override final  String? unitLong;
-@override final  String? unitShort;
-@override final  String? aisle;
-@override final  String? name;
-@override final  String? original;
-@override final  String? originalName;
- final  List<String>? _meta;
-@override List<String>? get meta {
-  final value = _meta;
-  if (value == null) return null;
-  if (_meta is EqualUnmodifiableListView) return _meta;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-@override final  String? image;
-
-/// Create a copy of IngredientApiDto
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$IngredientApiDtoCopyWith<_IngredientApiDto> get copyWith => __$IngredientApiDtoCopyWithImpl<_IngredientApiDto>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$IngredientApiDtoToJson(this, );
-}
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IngredientApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.unit, unit) || other.unit == unit)&&(identical(other.unitLong, unitLong) || other.unitLong == unitLong)&&(identical(other.unitShort, unitShort) || other.unitShort == unitShort)&&(identical(other.aisle, aisle) || other.aisle == aisle)&&(identical(other.name, name) || other.name == name)&&(identical(other.original, original) || other.original == original)&&(identical(other.originalName, originalName) || other.originalName == originalName)&&const DeepCollectionEquality().equals(other._meta, _meta)&&(identical(other.image, image) || other.image == image));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,amount,unit,unitLong,unitShort,aisle,name,original,originalName,const DeepCollectionEquality().hash(_meta),image);
-
-@override
-String toString() {
-  return 'IngredientApiDto(id: $id, amount: $amount, unit: $unit, unitLong: $unitLong, unitShort: $unitShort, aisle: $aisle, name: $name, original: $original, originalName: $originalName, meta: $meta, image: $image)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$IngredientApiDtoCopyWith<$Res> implements $IngredientApiDtoCopyWith<$Res> {
-  factory _$IngredientApiDtoCopyWith(_IngredientApiDto value, $Res Function(_IngredientApiDto) _then) = __$IngredientApiDtoCopyWithImpl;
-@override @useResult
-$Res call({
- int? id, int? amount, String? unit, String? unitLong, String? unitShort, String? aisle, String? name, String? original, String? originalName, List<String>? meta, String? image
-});
-
-
-
-
-}
-/// @nodoc
-class __$IngredientApiDtoCopyWithImpl<$Res>
-    implements _$IngredientApiDtoCopyWith<$Res> {
-  __$IngredientApiDtoCopyWithImpl(this._self, this._then);
-
-  final _IngredientApiDto _self;
-  final $Res Function(_IngredientApiDto) _then;
-
-/// Create a copy of IngredientApiDto
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? amount = freezed,Object? unit = freezed,Object? unitLong = freezed,Object? unitShort = freezed,Object? aisle = freezed,Object? name = freezed,Object? original = freezed,Object? originalName = freezed,Object? meta = freezed,Object? image = freezed,}) {
-  return _then(_IngredientApiDto(
-id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int?,amount: freezed == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int?,unit: freezed == unit ? _self.unit : unit // ignore: cast_nullable_to_non_nullable
-as String?,unitLong: freezed == unitLong ? _self.unitLong : unitLong // ignore: cast_nullable_to_non_nullable
-as String?,unitShort: freezed == unitShort ? _self.unitShort : unitShort // ignore: cast_nullable_to_non_nullable
-as String?,aisle: freezed == aisle ? _self.aisle : aisle // ignore: cast_nullable_to_non_nullable
-as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String?,original: freezed == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
-as String?,originalName: freezed == originalName ? _self.originalName : originalName // ignore: cast_nullable_to_non_nullable
-as String?,meta: freezed == meta ? _self._meta : meta // ignore: cast_nullable_to_non_nullable
-as List<String>?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-
-}
-
-
-/// @nodoc
 mixin _$RecipeApiDto {
 
- int? get id; int? get usedIngredientCount; int? get missedIngredientCount; List<IngredientApiDto>? get missedIngredients; int? get likes; String? get title; String? get image; String? get imageType;
+ int? get id; String? get image; String? get title; int? get readyInMinutes; String? get sourceUrl; int? get healthScore; String? get sourceName;
 /// Create a copy of RecipeApiDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -609,16 +308,16 @@ $RecipeApiDtoCopyWith<RecipeApiDto> get copyWith => _$RecipeApiDtoCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecipeApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.usedIngredientCount, usedIngredientCount) || other.usedIngredientCount == usedIngredientCount)&&(identical(other.missedIngredientCount, missedIngredientCount) || other.missedIngredientCount == missedIngredientCount)&&const DeepCollectionEquality().equals(other.missedIngredients, missedIngredients)&&(identical(other.likes, likes) || other.likes == likes)&&(identical(other.title, title) || other.title == title)&&(identical(other.image, image) || other.image == image)&&(identical(other.imageType, imageType) || other.imageType == imageType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecipeApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.image, image) || other.image == image)&&(identical(other.title, title) || other.title == title)&&(identical(other.readyInMinutes, readyInMinutes) || other.readyInMinutes == readyInMinutes)&&(identical(other.sourceUrl, sourceUrl) || other.sourceUrl == sourceUrl)&&(identical(other.healthScore, healthScore) || other.healthScore == healthScore)&&(identical(other.sourceName, sourceName) || other.sourceName == sourceName));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,usedIngredientCount,missedIngredientCount,const DeepCollectionEquality().hash(missedIngredients),likes,title,image,imageType);
+int get hashCode => Object.hash(runtimeType,id,image,title,readyInMinutes,sourceUrl,healthScore,sourceName);
 
 @override
 String toString() {
-  return 'RecipeApiDto(id: $id, usedIngredientCount: $usedIngredientCount, missedIngredientCount: $missedIngredientCount, missedIngredients: $missedIngredients, likes: $likes, title: $title, image: $image, imageType: $imageType)';
+  return 'RecipeApiDto(id: $id, image: $image, title: $title, readyInMinutes: $readyInMinutes, sourceUrl: $sourceUrl, healthScore: $healthScore, sourceName: $sourceName)';
 }
 
 
@@ -629,7 +328,7 @@ abstract mixin class $RecipeApiDtoCopyWith<$Res>  {
   factory $RecipeApiDtoCopyWith(RecipeApiDto value, $Res Function(RecipeApiDto) _then) = _$RecipeApiDtoCopyWithImpl;
 @useResult
 $Res call({
- int? id, int? usedIngredientCount, int? missedIngredientCount, List<IngredientApiDto>? missedIngredients, int? likes, String? title, String? image, String? imageType
+ int? id, String? image, String? title, int? readyInMinutes, String? sourceUrl, int? healthScore, String? sourceName
 });
 
 
@@ -646,16 +345,15 @@ class _$RecipeApiDtoCopyWithImpl<$Res>
 
 /// Create a copy of RecipeApiDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? usedIngredientCount = freezed,Object? missedIngredientCount = freezed,Object? missedIngredients = freezed,Object? likes = freezed,Object? title = freezed,Object? image = freezed,Object? imageType = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? image = freezed,Object? title = freezed,Object? readyInMinutes = freezed,Object? sourceUrl = freezed,Object? healthScore = freezed,Object? sourceName = freezed,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int?,usedIngredientCount: freezed == usedIngredientCount ? _self.usedIngredientCount : usedIngredientCount // ignore: cast_nullable_to_non_nullable
-as int?,missedIngredientCount: freezed == missedIngredientCount ? _self.missedIngredientCount : missedIngredientCount // ignore: cast_nullable_to_non_nullable
-as int?,missedIngredients: freezed == missedIngredients ? _self.missedIngredients : missedIngredients // ignore: cast_nullable_to_non_nullable
-as List<IngredientApiDto>?,likes: freezed == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
-as int?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String?,imageType: freezed == imageType ? _self.imageType : imageType // ignore: cast_nullable_to_non_nullable
+as int?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,readyInMinutes: freezed == readyInMinutes ? _self.readyInMinutes : readyInMinutes // ignore: cast_nullable_to_non_nullable
+as int?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // ignore: cast_nullable_to_non_nullable
+as String?,healthScore: freezed == healthScore ? _self.healthScore : healthScore // ignore: cast_nullable_to_non_nullable
+as int?,sourceName: freezed == sourceName ? _self.sourceName : sourceName // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -741,10 +439,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  int? usedIngredientCount,  int? missedIngredientCount,  List<IngredientApiDto>? missedIngredients,  int? likes,  String? title,  String? image,  String? imageType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  int? readyInMinutes,  String? sourceUrl,  int? healthScore,  String? sourceName)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RecipeApiDto() when $default != null:
-return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_that.missedIngredients,_that.likes,_that.title,_that.image,_that.imageType);case _:
+return $default(_that.id,_that.image,_that.title,_that.readyInMinutes,_that.sourceUrl,_that.healthScore,_that.sourceName);case _:
   return orElse();
 
 }
@@ -762,10 +460,10 @@ return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  int? usedIngredientCount,  int? missedIngredientCount,  List<IngredientApiDto>? missedIngredients,  int? likes,  String? title,  String? image,  String? imageType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  int? readyInMinutes,  String? sourceUrl,  int? healthScore,  String? sourceName)  $default,) {final _that = this;
 switch (_that) {
 case _RecipeApiDto():
-return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_that.missedIngredients,_that.likes,_that.title,_that.image,_that.imageType);case _:
+return $default(_that.id,_that.image,_that.title,_that.readyInMinutes,_that.sourceUrl,_that.healthScore,_that.sourceName);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -782,10 +480,10 @@ return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  int? usedIngredientCount,  int? missedIngredientCount,  List<IngredientApiDto>? missedIngredients,  int? likes,  String? title,  String? image,  String? imageType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  String? image,  String? title,  int? readyInMinutes,  String? sourceUrl,  int? healthScore,  String? sourceName)?  $default,) {final _that = this;
 switch (_that) {
 case _RecipeApiDto() when $default != null:
-return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_that.missedIngredients,_that.likes,_that.title,_that.image,_that.imageType);case _:
+return $default(_that.id,_that.image,_that.title,_that.readyInMinutes,_that.sourceUrl,_that.healthScore,_that.sourceName);case _:
   return null;
 
 }
@@ -797,25 +495,16 @@ return $default(_that.id,_that.usedIngredientCount,_that.missedIngredientCount,_
 @JsonSerializable()
 
 class _RecipeApiDto implements RecipeApiDto {
-  const _RecipeApiDto({this.id, this.usedIngredientCount, this.missedIngredientCount, final  List<IngredientApiDto>? missedIngredients, this.likes, this.title, this.image, this.imageType}): _missedIngredients = missedIngredients;
+  const _RecipeApiDto({this.id, this.image, this.title, this.readyInMinutes, this.sourceUrl, this.healthScore, this.sourceName});
   factory _RecipeApiDto.fromJson(Map<String, dynamic> json) => _$RecipeApiDtoFromJson(json);
 
 @override final  int? id;
-@override final  int? usedIngredientCount;
-@override final  int? missedIngredientCount;
- final  List<IngredientApiDto>? _missedIngredients;
-@override List<IngredientApiDto>? get missedIngredients {
-  final value = _missedIngredients;
-  if (value == null) return null;
-  if (_missedIngredients is EqualUnmodifiableListView) return _missedIngredients;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
-}
-
-@override final  int? likes;
-@override final  String? title;
 @override final  String? image;
-@override final  String? imageType;
+@override final  String? title;
+@override final  int? readyInMinutes;
+@override final  String? sourceUrl;
+@override final  int? healthScore;
+@override final  String? sourceName;
 
 /// Create a copy of RecipeApiDto
 /// with the given fields replaced by the non-null parameter values.
@@ -830,16 +519,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecipeApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.usedIngredientCount, usedIngredientCount) || other.usedIngredientCount == usedIngredientCount)&&(identical(other.missedIngredientCount, missedIngredientCount) || other.missedIngredientCount == missedIngredientCount)&&const DeepCollectionEquality().equals(other._missedIngredients, _missedIngredients)&&(identical(other.likes, likes) || other.likes == likes)&&(identical(other.title, title) || other.title == title)&&(identical(other.image, image) || other.image == image)&&(identical(other.imageType, imageType) || other.imageType == imageType));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecipeApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.image, image) || other.image == image)&&(identical(other.title, title) || other.title == title)&&(identical(other.readyInMinutes, readyInMinutes) || other.readyInMinutes == readyInMinutes)&&(identical(other.sourceUrl, sourceUrl) || other.sourceUrl == sourceUrl)&&(identical(other.healthScore, healthScore) || other.healthScore == healthScore)&&(identical(other.sourceName, sourceName) || other.sourceName == sourceName));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,usedIngredientCount,missedIngredientCount,const DeepCollectionEquality().hash(_missedIngredients),likes,title,image,imageType);
+int get hashCode => Object.hash(runtimeType,id,image,title,readyInMinutes,sourceUrl,healthScore,sourceName);
 
 @override
 String toString() {
-  return 'RecipeApiDto(id: $id, usedIngredientCount: $usedIngredientCount, missedIngredientCount: $missedIngredientCount, missedIngredients: $missedIngredients, likes: $likes, title: $title, image: $image, imageType: $imageType)';
+  return 'RecipeApiDto(id: $id, image: $image, title: $title, readyInMinutes: $readyInMinutes, sourceUrl: $sourceUrl, healthScore: $healthScore, sourceName: $sourceName)';
 }
 
 
@@ -850,7 +539,7 @@ abstract mixin class _$RecipeApiDtoCopyWith<$Res> implements $RecipeApiDtoCopyWi
   factory _$RecipeApiDtoCopyWith(_RecipeApiDto value, $Res Function(_RecipeApiDto) _then) = __$RecipeApiDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int? id, int? usedIngredientCount, int? missedIngredientCount, List<IngredientApiDto>? missedIngredients, int? likes, String? title, String? image, String? imageType
+ int? id, String? image, String? title, int? readyInMinutes, String? sourceUrl, int? healthScore, String? sourceName
 });
 
 
@@ -867,16 +556,1389 @@ class __$RecipeApiDtoCopyWithImpl<$Res>
 
 /// Create a copy of RecipeApiDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? usedIngredientCount = freezed,Object? missedIngredientCount = freezed,Object? missedIngredients = freezed,Object? likes = freezed,Object? title = freezed,Object? image = freezed,Object? imageType = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? image = freezed,Object? title = freezed,Object? readyInMinutes = freezed,Object? sourceUrl = freezed,Object? healthScore = freezed,Object? sourceName = freezed,}) {
   return _then(_RecipeApiDto(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int?,usedIngredientCount: freezed == usedIngredientCount ? _self.usedIngredientCount : usedIngredientCount // ignore: cast_nullable_to_non_nullable
-as int?,missedIngredientCount: freezed == missedIngredientCount ? _self.missedIngredientCount : missedIngredientCount // ignore: cast_nullable_to_non_nullable
-as int?,missedIngredients: freezed == missedIngredients ? _self._missedIngredients : missedIngredients // ignore: cast_nullable_to_non_nullable
-as List<IngredientApiDto>?,likes: freezed == likes ? _self.likes : likes // ignore: cast_nullable_to_non_nullable
-as int?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
-as String?,imageType: freezed == imageType ? _self.imageType : imageType // ignore: cast_nullable_to_non_nullable
+as int?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,readyInMinutes: freezed == readyInMinutes ? _self.readyInMinutes : readyInMinutes // ignore: cast_nullable_to_non_nullable
+as int?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // ignore: cast_nullable_to_non_nullable
+as String?,healthScore: freezed == healthScore ? _self.healthScore : healthScore // ignore: cast_nullable_to_non_nullable
+as int?,sourceName: freezed == sourceName ? _self.sourceName : sourceName // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$RecipeDetailsApiDto {
+
+ int? get id; String? get image; String? get title; String? get sourceUrl; List<IngredientApiDto>? get extendedIngredients; String? get summary; List<dynamic>? get analyzedInstructions;
+/// Create a copy of RecipeDetailsApiDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RecipeDetailsApiDtoCopyWith<RecipeDetailsApiDto> get copyWith => _$RecipeDetailsApiDtoCopyWithImpl<RecipeDetailsApiDto>(this as RecipeDetailsApiDto, _$identity);
+
+  /// Serializes this RecipeDetailsApiDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecipeDetailsApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.image, image) || other.image == image)&&(identical(other.title, title) || other.title == title)&&(identical(other.sourceUrl, sourceUrl) || other.sourceUrl == sourceUrl)&&const DeepCollectionEquality().equals(other.extendedIngredients, extendedIngredients)&&(identical(other.summary, summary) || other.summary == summary)&&const DeepCollectionEquality().equals(other.analyzedInstructions, analyzedInstructions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,image,title,sourceUrl,const DeepCollectionEquality().hash(extendedIngredients),summary,const DeepCollectionEquality().hash(analyzedInstructions));
+
+@override
+String toString() {
+  return 'RecipeDetailsApiDto(id: $id, image: $image, title: $title, sourceUrl: $sourceUrl, extendedIngredients: $extendedIngredients, summary: $summary, analyzedInstructions: $analyzedInstructions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $RecipeDetailsApiDtoCopyWith<$Res>  {
+  factory $RecipeDetailsApiDtoCopyWith(RecipeDetailsApiDto value, $Res Function(RecipeDetailsApiDto) _then) = _$RecipeDetailsApiDtoCopyWithImpl;
+@useResult
+$Res call({
+ int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<dynamic>? analyzedInstructions
+});
+
+
+
+
+}
+/// @nodoc
+class _$RecipeDetailsApiDtoCopyWithImpl<$Res>
+    implements $RecipeDetailsApiDtoCopyWith<$Res> {
+  _$RecipeDetailsApiDtoCopyWithImpl(this._self, this._then);
+
+  final RecipeDetailsApiDto _self;
+  final $Res Function(RecipeDetailsApiDto) _then;
+
+/// Create a copy of RecipeDetailsApiDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? image = freezed,Object? title = freezed,Object? sourceUrl = freezed,Object? extendedIngredients = freezed,Object? summary = freezed,Object? analyzedInstructions = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // ignore: cast_nullable_to_non_nullable
+as String?,extendedIngredients: freezed == extendedIngredients ? _self.extendedIngredients : extendedIngredients // ignore: cast_nullable_to_non_nullable
+as List<IngredientApiDto>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as String?,analyzedInstructions: freezed == analyzedInstructions ? _self.analyzedInstructions : analyzedInstructions // ignore: cast_nullable_to_non_nullable
+as List<dynamic>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [RecipeDetailsApiDto].
+extension RecipeDetailsApiDtoPatterns on RecipeDetailsApiDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _RecipeDetailsApiDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _RecipeDetailsApiDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _RecipeDetailsApiDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto() when $default != null:
+return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)  $default,) {final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto():
+return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)?  $default,) {final _that = this;
+switch (_that) {
+case _RecipeDetailsApiDto() when $default != null:
+return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _RecipeDetailsApiDto implements RecipeDetailsApiDto {
+  const _RecipeDetailsApiDto({this.id, this.image, this.title, this.sourceUrl, final  List<IngredientApiDto>? extendedIngredients, this.summary, final  List<dynamic>? analyzedInstructions}): _extendedIngredients = extendedIngredients,_analyzedInstructions = analyzedInstructions;
+  factory _RecipeDetailsApiDto.fromJson(Map<String, dynamic> json) => _$RecipeDetailsApiDtoFromJson(json);
+
+@override final  int? id;
+@override final  String? image;
+@override final  String? title;
+@override final  String? sourceUrl;
+ final  List<IngredientApiDto>? _extendedIngredients;
+@override List<IngredientApiDto>? get extendedIngredients {
+  final value = _extendedIngredients;
+  if (value == null) return null;
+  if (_extendedIngredients is EqualUnmodifiableListView) return _extendedIngredients;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+@override final  String? summary;
+ final  List<dynamic>? _analyzedInstructions;
+@override List<dynamic>? get analyzedInstructions {
+  final value = _analyzedInstructions;
+  if (value == null) return null;
+  if (_analyzedInstructions is EqualUnmodifiableListView) return _analyzedInstructions;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+
+/// Create a copy of RecipeDetailsApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RecipeDetailsApiDtoCopyWith<_RecipeDetailsApiDto> get copyWith => __$RecipeDetailsApiDtoCopyWithImpl<_RecipeDetailsApiDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$RecipeDetailsApiDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecipeDetailsApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.image, image) || other.image == image)&&(identical(other.title, title) || other.title == title)&&(identical(other.sourceUrl, sourceUrl) || other.sourceUrl == sourceUrl)&&const DeepCollectionEquality().equals(other._extendedIngredients, _extendedIngredients)&&(identical(other.summary, summary) || other.summary == summary)&&const DeepCollectionEquality().equals(other._analyzedInstructions, _analyzedInstructions));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,image,title,sourceUrl,const DeepCollectionEquality().hash(_extendedIngredients),summary,const DeepCollectionEquality().hash(_analyzedInstructions));
+
+@override
+String toString() {
+  return 'RecipeDetailsApiDto(id: $id, image: $image, title: $title, sourceUrl: $sourceUrl, extendedIngredients: $extendedIngredients, summary: $summary, analyzedInstructions: $analyzedInstructions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RecipeDetailsApiDtoCopyWith<$Res> implements $RecipeDetailsApiDtoCopyWith<$Res> {
+  factory _$RecipeDetailsApiDtoCopyWith(_RecipeDetailsApiDto value, $Res Function(_RecipeDetailsApiDto) _then) = __$RecipeDetailsApiDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<dynamic>? analyzedInstructions
+});
+
+
+
+
+}
+/// @nodoc
+class __$RecipeDetailsApiDtoCopyWithImpl<$Res>
+    implements _$RecipeDetailsApiDtoCopyWith<$Res> {
+  __$RecipeDetailsApiDtoCopyWithImpl(this._self, this._then);
+
+  final _RecipeDetailsApiDto _self;
+  final $Res Function(_RecipeDetailsApiDto) _then;
+
+/// Create a copy of RecipeDetailsApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? image = freezed,Object? title = freezed,Object? sourceUrl = freezed,Object? extendedIngredients = freezed,Object? summary = freezed,Object? analyzedInstructions = freezed,}) {
+  return _then(_RecipeDetailsApiDto(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,image: freezed == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // ignore: cast_nullable_to_non_nullable
+as String?,extendedIngredients: freezed == extendedIngredients ? _self._extendedIngredients : extendedIngredients // ignore: cast_nullable_to_non_nullable
+as List<IngredientApiDto>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as String?,analyzedInstructions: freezed == analyzedInstructions ? _self._analyzedInstructions : analyzedInstructions // ignore: cast_nullable_to_non_nullable
+as List<dynamic>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$IngredientApiDto {
+
+ int? get id; String? get original;
+/// Create a copy of IngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$IngredientApiDtoCopyWith<IngredientApiDto> get copyWith => _$IngredientApiDtoCopyWithImpl<IngredientApiDto>(this as IngredientApiDto, _$identity);
+
+  /// Serializes this IngredientApiDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IngredientApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.original, original) || other.original == original));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,original);
+
+@override
+String toString() {
+  return 'IngredientApiDto(id: $id, original: $original)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $IngredientApiDtoCopyWith<$Res>  {
+  factory $IngredientApiDtoCopyWith(IngredientApiDto value, $Res Function(IngredientApiDto) _then) = _$IngredientApiDtoCopyWithImpl;
+@useResult
+$Res call({
+ int? id, String? original
+});
+
+
+
+
+}
+/// @nodoc
+class _$IngredientApiDtoCopyWithImpl<$Res>
+    implements $IngredientApiDtoCopyWith<$Res> {
+  _$IngredientApiDtoCopyWithImpl(this._self, this._then);
+
+  final IngredientApiDto _self;
+  final $Res Function(IngredientApiDto) _then;
+
+/// Create a copy of IngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? original = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,original: freezed == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [IngredientApiDto].
+extension IngredientApiDtoPatterns on IngredientApiDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _IngredientApiDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _IngredientApiDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _IngredientApiDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _IngredientApiDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _IngredientApiDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _IngredientApiDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  String? original)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _IngredientApiDto() when $default != null:
+return $default(_that.id,_that.original);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  String? original)  $default,) {final _that = this;
+switch (_that) {
+case _IngredientApiDto():
+return $default(_that.id,_that.original);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  String? original)?  $default,) {final _that = this;
+switch (_that) {
+case _IngredientApiDto() when $default != null:
+return $default(_that.id,_that.original);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _IngredientApiDto implements IngredientApiDto {
+  const _IngredientApiDto({this.id, this.original});
+  factory _IngredientApiDto.fromJson(Map<String, dynamic> json) => _$IngredientApiDtoFromJson(json);
+
+@override final  int? id;
+@override final  String? original;
+
+/// Create a copy of IngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$IngredientApiDtoCopyWith<_IngredientApiDto> get copyWith => __$IngredientApiDtoCopyWithImpl<_IngredientApiDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$IngredientApiDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IngredientApiDto&&(identical(other.id, id) || other.id == id)&&(identical(other.original, original) || other.original == original));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,original);
+
+@override
+String toString() {
+  return 'IngredientApiDto(id: $id, original: $original)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$IngredientApiDtoCopyWith<$Res> implements $IngredientApiDtoCopyWith<$Res> {
+  factory _$IngredientApiDtoCopyWith(_IngredientApiDto value, $Res Function(_IngredientApiDto) _then) = __$IngredientApiDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int? id, String? original
+});
+
+
+
+
+}
+/// @nodoc
+class __$IngredientApiDtoCopyWithImpl<$Res>
+    implements _$IngredientApiDtoCopyWith<$Res> {
+  __$IngredientApiDtoCopyWithImpl(this._self, this._then);
+
+  final _IngredientApiDto _self;
+  final $Res Function(_IngredientApiDto) _then;
+
+/// Create a copy of IngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? original = freezed,}) {
+  return _then(_IngredientApiDto(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,original: freezed == original ? _self.original : original // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$InstructionApiDto {
+
+ List<StepApiDto>? get steps;
+/// Create a copy of InstructionApiDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstructionApiDtoCopyWith<InstructionApiDto> get copyWith => _$InstructionApiDtoCopyWithImpl<InstructionApiDto>(this as InstructionApiDto, _$identity);
+
+  /// Serializes this InstructionApiDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstructionApiDto&&const DeepCollectionEquality().equals(other.steps, steps));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(steps));
+
+@override
+String toString() {
+  return 'InstructionApiDto(steps: $steps)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $InstructionApiDtoCopyWith<$Res>  {
+  factory $InstructionApiDtoCopyWith(InstructionApiDto value, $Res Function(InstructionApiDto) _then) = _$InstructionApiDtoCopyWithImpl;
+@useResult
+$Res call({
+ List<StepApiDto>? steps
+});
+
+
+
+
+}
+/// @nodoc
+class _$InstructionApiDtoCopyWithImpl<$Res>
+    implements $InstructionApiDtoCopyWith<$Res> {
+  _$InstructionApiDtoCopyWithImpl(this._self, this._then);
+
+  final InstructionApiDto _self;
+  final $Res Function(InstructionApiDto) _then;
+
+/// Create a copy of InstructionApiDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? steps = freezed,}) {
+  return _then(_self.copyWith(
+steps: freezed == steps ? _self.steps : steps // ignore: cast_nullable_to_non_nullable
+as List<StepApiDto>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [InstructionApiDto].
+extension InstructionApiDtoPatterns on InstructionApiDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstructionApiDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstructionApiDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstructionApiDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstructionApiDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstructionApiDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstructionApiDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<StepApiDto>? steps)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstructionApiDto() when $default != null:
+return $default(_that.steps);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<StepApiDto>? steps)  $default,) {final _that = this;
+switch (_that) {
+case _InstructionApiDto():
+return $default(_that.steps);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<StepApiDto>? steps)?  $default,) {final _that = this;
+switch (_that) {
+case _InstructionApiDto() when $default != null:
+return $default(_that.steps);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _InstructionApiDto implements InstructionApiDto {
+  const _InstructionApiDto({final  List<StepApiDto>? steps}): _steps = steps;
+  factory _InstructionApiDto.fromJson(Map<String, dynamic> json) => _$InstructionApiDtoFromJson(json);
+
+ final  List<StepApiDto>? _steps;
+@override List<StepApiDto>? get steps {
+  final value = _steps;
+  if (value == null) return null;
+  if (_steps is EqualUnmodifiableListView) return _steps;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+
+/// Create a copy of InstructionApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstructionApiDtoCopyWith<_InstructionApiDto> get copyWith => __$InstructionApiDtoCopyWithImpl<_InstructionApiDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$InstructionApiDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstructionApiDto&&const DeepCollectionEquality().equals(other._steps, _steps));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_steps));
+
+@override
+String toString() {
+  return 'InstructionApiDto(steps: $steps)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstructionApiDtoCopyWith<$Res> implements $InstructionApiDtoCopyWith<$Res> {
+  factory _$InstructionApiDtoCopyWith(_InstructionApiDto value, $Res Function(_InstructionApiDto) _then) = __$InstructionApiDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ List<StepApiDto>? steps
+});
+
+
+
+
+}
+/// @nodoc
+class __$InstructionApiDtoCopyWithImpl<$Res>
+    implements _$InstructionApiDtoCopyWith<$Res> {
+  __$InstructionApiDtoCopyWithImpl(this._self, this._then);
+
+  final _InstructionApiDto _self;
+  final $Res Function(_InstructionApiDto) _then;
+
+/// Create a copy of InstructionApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? steps = freezed,}) {
+  return _then(_InstructionApiDto(
+steps: freezed == steps ? _self._steps : steps // ignore: cast_nullable_to_non_nullable
+as List<StepApiDto>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$StepApiDto {
+
+ int? get number; String? get step; List<StepIngredientApiDto>? get ingredients;
+/// Create a copy of StepApiDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StepApiDtoCopyWith<StepApiDto> get copyWith => _$StepApiDtoCopyWithImpl<StepApiDto>(this as StepApiDto, _$identity);
+
+  /// Serializes this StepApiDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StepApiDto&&(identical(other.number, number) || other.number == number)&&(identical(other.step, step) || other.step == step)&&const DeepCollectionEquality().equals(other.ingredients, ingredients));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,number,step,const DeepCollectionEquality().hash(ingredients));
+
+@override
+String toString() {
+  return 'StepApiDto(number: $number, step: $step, ingredients: $ingredients)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $StepApiDtoCopyWith<$Res>  {
+  factory $StepApiDtoCopyWith(StepApiDto value, $Res Function(StepApiDto) _then) = _$StepApiDtoCopyWithImpl;
+@useResult
+$Res call({
+ int? number, String? step, List<StepIngredientApiDto>? ingredients
+});
+
+
+
+
+}
+/// @nodoc
+class _$StepApiDtoCopyWithImpl<$Res>
+    implements $StepApiDtoCopyWith<$Res> {
+  _$StepApiDtoCopyWithImpl(this._self, this._then);
+
+  final StepApiDto _self;
+  final $Res Function(StepApiDto) _then;
+
+/// Create a copy of StepApiDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? number = freezed,Object? step = freezed,Object? ingredients = freezed,}) {
+  return _then(_self.copyWith(
+number: freezed == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
+as int?,step: freezed == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
+as String?,ingredients: freezed == ingredients ? _self.ingredients : ingredients // ignore: cast_nullable_to_non_nullable
+as List<StepIngredientApiDto>?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [StepApiDto].
+extension StepApiDtoPatterns on StepApiDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _StepApiDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _StepApiDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _StepApiDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _StepApiDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _StepApiDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _StepApiDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? number,  String? step,  List<StepIngredientApiDto>? ingredients)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _StepApiDto() when $default != null:
+return $default(_that.number,_that.step,_that.ingredients);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? number,  String? step,  List<StepIngredientApiDto>? ingredients)  $default,) {final _that = this;
+switch (_that) {
+case _StepApiDto():
+return $default(_that.number,_that.step,_that.ingredients);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? number,  String? step,  List<StepIngredientApiDto>? ingredients)?  $default,) {final _that = this;
+switch (_that) {
+case _StepApiDto() when $default != null:
+return $default(_that.number,_that.step,_that.ingredients);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _StepApiDto implements StepApiDto {
+  const _StepApiDto({this.number, this.step, final  List<StepIngredientApiDto>? ingredients}): _ingredients = ingredients;
+  factory _StepApiDto.fromJson(Map<String, dynamic> json) => _$StepApiDtoFromJson(json);
+
+@override final  int? number;
+@override final  String? step;
+ final  List<StepIngredientApiDto>? _ingredients;
+@override List<StepIngredientApiDto>? get ingredients {
+  final value = _ingredients;
+  if (value == null) return null;
+  if (_ingredients is EqualUnmodifiableListView) return _ingredients;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+
+/// Create a copy of StepApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$StepApiDtoCopyWith<_StepApiDto> get copyWith => __$StepApiDtoCopyWithImpl<_StepApiDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$StepApiDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StepApiDto&&(identical(other.number, number) || other.number == number)&&(identical(other.step, step) || other.step == step)&&const DeepCollectionEquality().equals(other._ingredients, _ingredients));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,number,step,const DeepCollectionEquality().hash(_ingredients));
+
+@override
+String toString() {
+  return 'StepApiDto(number: $number, step: $step, ingredients: $ingredients)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$StepApiDtoCopyWith<$Res> implements $StepApiDtoCopyWith<$Res> {
+  factory _$StepApiDtoCopyWith(_StepApiDto value, $Res Function(_StepApiDto) _then) = __$StepApiDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int? number, String? step, List<StepIngredientApiDto>? ingredients
+});
+
+
+
+
+}
+/// @nodoc
+class __$StepApiDtoCopyWithImpl<$Res>
+    implements _$StepApiDtoCopyWith<$Res> {
+  __$StepApiDtoCopyWithImpl(this._self, this._then);
+
+  final _StepApiDto _self;
+  final $Res Function(_StepApiDto) _then;
+
+/// Create a copy of StepApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? number = freezed,Object? step = freezed,Object? ingredients = freezed,}) {
+  return _then(_StepApiDto(
+number: freezed == number ? _self.number : number // ignore: cast_nullable_to_non_nullable
+as int?,step: freezed == step ? _self.step : step // ignore: cast_nullable_to_non_nullable
+as String?,ingredients: freezed == ingredients ? _self._ingredients : ingredients // ignore: cast_nullable_to_non_nullable
+as List<StepIngredientApiDto>?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$StepIngredientApiDto {
+
+ String? get name;
+/// Create a copy of StepIngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StepIngredientApiDtoCopyWith<StepIngredientApiDto> get copyWith => _$StepIngredientApiDtoCopyWithImpl<StepIngredientApiDto>(this as StepIngredientApiDto, _$identity);
+
+  /// Serializes this StepIngredientApiDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StepIngredientApiDto&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
+
+@override
+String toString() {
+  return 'StepIngredientApiDto(name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $StepIngredientApiDtoCopyWith<$Res>  {
+  factory $StepIngredientApiDtoCopyWith(StepIngredientApiDto value, $Res Function(StepIngredientApiDto) _then) = _$StepIngredientApiDtoCopyWithImpl;
+@useResult
+$Res call({
+ String? name
+});
+
+
+
+
+}
+/// @nodoc
+class _$StepIngredientApiDtoCopyWithImpl<$Res>
+    implements $StepIngredientApiDtoCopyWith<$Res> {
+  _$StepIngredientApiDtoCopyWithImpl(this._self, this._then);
+
+  final StepIngredientApiDto _self;
+  final $Res Function(StepIngredientApiDto) _then;
+
+/// Create a copy of StepIngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = freezed,}) {
+  return _then(_self.copyWith(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [StepIngredientApiDto].
+extension StepIngredientApiDtoPatterns on StepIngredientApiDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _StepIngredientApiDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _StepIngredientApiDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _StepIngredientApiDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _StepIngredientApiDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _StepIngredientApiDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _StepIngredientApiDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? name)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _StepIngredientApiDto() when $default != null:
+return $default(_that.name);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? name)  $default,) {final _that = this;
+switch (_that) {
+case _StepIngredientApiDto():
+return $default(_that.name);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? name)?  $default,) {final _that = this;
+switch (_that) {
+case _StepIngredientApiDto() when $default != null:
+return $default(_that.name);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _StepIngredientApiDto implements StepIngredientApiDto {
+  const _StepIngredientApiDto({this.name});
+  factory _StepIngredientApiDto.fromJson(Map<String, dynamic> json) => _$StepIngredientApiDtoFromJson(json);
+
+@override final  String? name;
+
+/// Create a copy of StepIngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$StepIngredientApiDtoCopyWith<_StepIngredientApiDto> get copyWith => __$StepIngredientApiDtoCopyWithImpl<_StepIngredientApiDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$StepIngredientApiDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StepIngredientApiDto&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
+
+@override
+String toString() {
+  return 'StepIngredientApiDto(name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$StepIngredientApiDtoCopyWith<$Res> implements $StepIngredientApiDtoCopyWith<$Res> {
+  factory _$StepIngredientApiDtoCopyWith(_StepIngredientApiDto value, $Res Function(_StepIngredientApiDto) _then) = __$StepIngredientApiDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ String? name
+});
+
+
+
+
+}
+/// @nodoc
+class __$StepIngredientApiDtoCopyWithImpl<$Res>
+    implements _$StepIngredientApiDtoCopyWith<$Res> {
+  __$StepIngredientApiDtoCopyWithImpl(this._self, this._then);
+
+  final _StepIngredientApiDto _self;
+  final $Res Function(_StepIngredientApiDto) _then;
+
+/// Create a copy of StepIngredientApiDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = freezed,}) {
+  return _then(_StepIngredientApiDto(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

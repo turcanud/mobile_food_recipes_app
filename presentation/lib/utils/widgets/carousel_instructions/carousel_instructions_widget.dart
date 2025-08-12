@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/view/instruction_view_model.dart';
 
 import '../../../view/base_view_model.dart';
 import 'carousel_instruction_card_widget.dart';
 
 class CarouselInstructionsViewModel extends BaseViewModel {
-  final List<LocalInstructionViewModel> instructions;
+  final List<InstructionViewModel> instructions;
 
   CarouselInstructionsViewModel({required this.instructions});
 }
@@ -23,7 +24,7 @@ class CarouselInstructionsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: List.generate(
             model.instructions.length,
-            (index) => CarouselInstructionCardWidget(instruction: model.instructions[index]),
+            (index) => CarouselInstructionCardWidget(steps: model.instructions[index].steps),
           ),
         ),
       ),

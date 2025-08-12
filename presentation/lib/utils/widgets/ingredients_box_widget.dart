@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../core/constants/colors_constants.dart';
 import '../../view/base_view_model.dart';
+import '../../view/ingredient_view_model.dart';
 
 class IngredientsBoxViewModel extends BaseViewModel {
-  final List<LocalIngredientViewModel> ingredients;
+  final List<IngredientViewModel> ingredients;
   IngredientsBoxViewModel({required this.ingredients});
 }
 
@@ -24,7 +25,7 @@ class IngredientsBoxWidget extends StatelessWidget {
           (index) => ListTile(
             leading: Icon(Icons.circle_outlined, color: Color(0xffEBEBEB)),
             title: Text(
-              model.ingredients[index].ingredient,
+              model.ingredients[index].original,
               style: TextStyle(color: ColorsConstants.kPrimaryTextColor, fontSize: 13.0, fontWeight: FontWeight.w300),
             ),
           ),

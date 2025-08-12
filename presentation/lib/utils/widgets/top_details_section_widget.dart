@@ -8,9 +8,9 @@ class TopDetailsSectionViewModel extends BaseViewModel {
   TopDetailsSectionViewModel({required this.imageUrl, required this.description});
 }
 
-class TopDetailsSection extends StatelessWidget {
+class TopDetailsSectionWidget extends StatelessWidget {
   final TopDetailsSectionViewModel model;
-  const TopDetailsSection({super.key, required this.model});
+  const TopDetailsSectionWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,20 @@ class TopDetailsSection extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 10.0),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(16.0)),
-              child: Image.asset(model.imageUrl, height: 290, width: double.infinity, fit: BoxFit.cover),
+              child: Image.network(
+                model.imageUrl,
+                height: 290,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    'assets/images/placeholder_dark.jpg',
+                    height: 290,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  );
+                },
+              ),
             ),
           ),
           Container(

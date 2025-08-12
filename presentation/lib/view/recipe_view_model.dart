@@ -1,25 +1,19 @@
-import 'package:presentation/view/ingredient_view_model.dart';
-
 import 'base_view_model.dart';
 
 class RecipeViewModel extends BaseViewModel {
   final int id;
-  final int usedIngredientCount;
-  final int missedIngredientCount;
-  final List<IngredientViewModel> missedIngredients;
-  final int likes;
-  final String title;
   final String image;
-  final String imageType;
+  final String title;
+  final int readyInMinutes;
+  final int healthScore;
+  final String sourceName;
 
   RecipeViewModel({
     required this.id,
-    required this.usedIngredientCount,
-    required this.missedIngredientCount,
-    required this.missedIngredients,
-    required this.likes,
-    required this.title,
     required this.image,
-    required this.imageType,
+    required this.title,
+    required this.readyInMinutes,
+    required this.healthScore,
+    required this.sourceName,
   });
 }

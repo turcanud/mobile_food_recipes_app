@@ -6,7 +6,6 @@ import 'package:common/params.dart';
 import '../entities/index/index.dart';
 
 abstract class RecipeRepository {
-  Future<Either<Failure, List<RecipeEntity>>> getRecipes({
-    required GetRecipesParams params,
-  });
+  Future<Either<Failure, List<RecipeEntity>>> getRecipes({required GetRecipesParams params});
+  Future<Either<Failure, RecipeDetailsEntity>> getRecipeById({required GetRecipeByIdParams params});
 }

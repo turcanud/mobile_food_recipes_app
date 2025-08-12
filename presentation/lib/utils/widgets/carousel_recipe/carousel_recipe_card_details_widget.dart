@@ -35,14 +35,14 @@ class CarouselRecipeCardDetailsWidget extends StatelessWidget {
             children: [
               Icon(Icons.timer_outlined, size: 23, color: ColorsConstants.kSecondaryTextColor),
               SizedBox(width: 8.0),
-              CustomDetailsTextWidget(text: preparationTime),
+              CustomDetailsTextWidget(text: "$preparationTime minutes"),
             ],
           ),
           Row(
             children: [
-              Icon(Icons.badge_outlined, size: 23, color: ColorsConstants.kSecondaryTextColor),
+              Icon(Icons.health_and_safety, size: 23, color: ColorsConstants.kSecondaryTextColor),
               SizedBox(width: 8.0),
-              CustomDetailsTextWidget(text: difficulty),
+              CustomDetailsTextWidget(text: "$difficulty health score"),
             ],
           ),
           Row(

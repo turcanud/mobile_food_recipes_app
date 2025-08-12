@@ -1,9 +1,63 @@
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
+
+import 'package:common/params.dart';
+import 'package:domain/modules/recipes/usecases/get_recipes_usecase.dart';
+import 'package:presentation/utils/mappers/recipes_model_mapper.dart';
 
 import '../../../core/constants/images_constants.dart';
+import '../../../utils/widgets/carousel_creator/carousel_creators_widget.dart';
+import '../../../utils/widgets/carousel_recipe/carousel_recipes_widget.dart';
+import '../../../utils/widgets/header_section_widget.dart';
+import '../../../utils/widgets/top_home_page_widget.dart';
 import '../../../view/base_view_model.dart';
+import '../../../view/recipe_view_model.dart';
 
-class LocalHomeController extends GetxController {
+enum RemoteHomeStatus { loading, success, error }
+
+class HomeController extends GetxController {
+  final GetRecipesUsecase getRecipesUsecase = GetIt.instance.get();
+
+  RxList<RecipeViewModel> recipes = RxList<RecipeViewModel>([]);
+
+  Rx<RemoteHomeStatus> status = Rx<RemoteHomeStatus>(RemoteHomeStatus.loading);
+  RxString error = RxString('');
+
+  RxList<BaseViewModel> items = RxList<BaseViewModel>([]);
+
+  void initItems() {
+    items.value = [
+      TopHomePageViewModel(),
+      HeaderSectionViewModel(title: "Popular recipes"),
+      CarouselRecipesViewModel(recipes: []),
+      HeaderSectionViewModel(title: "Popular creators"),
+      CarouselCreatorsViewModel(creators: localCreators),
+      HeaderSectionViewModel(title: "Featured"),
+      CarouselCreatorsViewModel(creators: localCreators),
+    ];
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getRecipes();
+  }
+
+  Future<void> getRecipes() async {
+    status.value = RemoteHomeStatus.loading;
+    final result = await getRecipesUsecase(params: GetRecipesParams(query: "pasta", addRecipeInformation: true));
+    result.fold(
+      (failure) {
+        error.value = failure.errorMessage;
+        status.value = RemoteHomeStatus.error;
+      },
+      (data) {
+        recipes.assignAll(data.toModels());
+        status.value = RemoteHomeStatus.success;
+      },
+    );
+  }
+
   RxList<LocalRecipeViewModel> localRecipes = RxList<LocalRecipeViewModel>([
     LocalRecipeViewModel(
       imageUrl: ImagesConstants.kDarkDefaultPlaceholder,

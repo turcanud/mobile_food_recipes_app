@@ -1,17 +1,13 @@
-import 'package:common/constants/api_constants.dart';
-import 'package:data/modules/recipes/sources/remote/recipes_api_service.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+
+import 'package:common/constants/api_constants.dart';
+import 'package:data/modules/recipes/sources/remote/recipes_api_service.dart';
 
 Future<void> apiServiceInjectionContainer() async {
   final sl = GetIt.instance;
 
-  var dioConfiguration = BaseOptions(
-    headers: {"x-api-key": ApiConstants.kApiKey},
-    baseUrl: ApiConstants.kBaseUrl,
-    connectTimeout: Duration(seconds: 5),
-    receiveTimeout: Duration(seconds: 3),
-  );
+  var dioConfiguration = BaseOptions(headers: {"x-api-key": ApiConstants.kApiKey}, baseUrl: ApiConstants.kBaseUrl);
 
   var dioClient = Dio(dioConfiguration);
 

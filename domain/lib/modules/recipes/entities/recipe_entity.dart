@@ -4,12 +4,10 @@ part of 'index/index.dart';
 abstract class RecipeEntity with _$RecipeEntity {
   const factory RecipeEntity({
     int? id,
-    int? usedIngredientCount,
-    int? missedIngredientCount,
-    List<IngredientEntity>? missedIngredients,
-    int? likes,
-    String? title,
     String? image,
-    String? imageType,
+    String? title,
+    int? readyInMinutes,
+    int? healthScore,
+    String? sourceName,
   }) = _RecipeEntity;
 }

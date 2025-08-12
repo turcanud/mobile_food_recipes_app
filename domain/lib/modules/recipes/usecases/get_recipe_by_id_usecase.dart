@@ -7,13 +7,13 @@ import 'package:common/params.dart';
 import '../entities/index/index.dart';
 import '../repositories/recipe_repository.dart';
 
-class GetRecipesUsecase extends UseCase<Either<Failure, List<RecipeEntity>>, GetRecipesParams> {
+class GetRecipeByIdUsecase extends UseCase<Either<Failure, RecipeDetailsEntity>, GetRecipeByIdParams> {
   final RecipeRepository _recipeRepository;
 
-  GetRecipesUsecase(this._recipeRepository);
+  GetRecipeByIdUsecase(this._recipeRepository);
 
   @override
-  Future<Either<Failure, List<RecipeEntity>>> call({required GetRecipesParams params}) {
-    return _recipeRepository.getRecipes(params: params);
+  Future<Either<Failure, RecipeDetailsEntity>> call({required GetRecipeByIdParams params}) {
+    return _recipeRepository.getRecipeById(params: params);
   }
 }

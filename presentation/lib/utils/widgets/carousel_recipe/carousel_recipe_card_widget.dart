@@ -14,7 +14,7 @@ class CarouselRecipeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () => Get.to(() => DetailsPage()),
+      onTap: () => Get.to(() => DetailsPage(id: item.id)),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 8.0),
         width: 215,
@@ -24,10 +24,10 @@ class CarouselRecipeCardWidget extends StatelessWidget {
             CarouselRecipeCardImageWidget(imageUrl: item.image),
             CarouselRecipeCardDetailsWidget(
               title: item.title,
-              type: item.imageType,
-              preparationTime: "30 min",
-              difficulty: "medium",
-              creator: "Mikolaj",
+              type: "Pasta",
+              preparationTime: item.readyInMinutes.toString(),
+              difficulty: item.healthScore.toString(),
+              creator: item.sourceName,
             ),
           ],
         ),
