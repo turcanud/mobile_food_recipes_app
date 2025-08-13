@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../core/constants/colors_constants.dart';
-import 'button_builder_widget.dart';
-import 'custom_text_widget.dart';
+import '../../core/constants/text_styles.dart';
+import 'custom_button_widget.dart';
 
-class RecipesRecommendation extends StatelessWidget {
-  const RecipesRecommendation({super.key});
+class RecipesRecommendationWidget extends StatelessWidget {
+  const RecipesRecommendationWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,33 +25,27 @@ class RecipesRecommendation extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomTextWidget(title: 'Recipes recommendation'),
-                    CustomTextWidget(
-                      title:
-                          "Get your personalized recipes recommendation in a 4 steps",
-                      color: ColorsConstants.kSecondaryTextColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
+                    Text('Recipes recommendation', style: KTextStyles.semiBold.copyWith(fontWeight: FontWeight.w500)),
+                    Text(
+                      "Get your personalized recipes recommendation in a 4 steps",
+                      style: KTextStyles.light.copyWith(fontSize: 12, fontWeight: FontWeight.w300),
                     ),
                   ],
                 ),
               ),
-              SvgPicture.asset(
-                'assets/icons/pot_of_food.svg',
-                width: 85,
-                height: 85,
-              ),
+              SvgPicture.asset('assets/icons/pot_of_food.svg', width: 85, height: 85),
             ],
           ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ButtonBuilder(
+              CustomButtonWidget(
                 buttonText: "Get Started",
-                buttonColor: Color(0xffF9E2BE),
+                buttonColor: Color(0xffFDF6EB),
+                borderColor: Color(0xffF9E2BE),
               ),
-              ButtonBuilder(buttonText: "Skip"),
+              CustomButtonWidget(buttonText: "Skip", borderColor: Color(0xffEBEBEB)),
             ],
           ),
         ],

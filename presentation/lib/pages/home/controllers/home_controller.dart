@@ -8,7 +8,7 @@ import 'package:presentation/utils/mappers/recipes_model_mapper.dart';
 import '../../../core/constants/images_constants.dart';
 import '../../../utils/widgets/carousel_creator/carousel_creators_widget.dart';
 import '../../../utils/widgets/carousel_recipe/carousel_recipes_widget.dart';
-import '../../../utils/widgets/header_section_widget.dart';
+import '../../../utils/widgets/section_title_widget.dart';
 import '../../../utils/widgets/top_home_page_widget.dart';
 import '../../../view/base_view_model.dart';
 import '../../../view/recipe_view_model.dart';
@@ -28,11 +28,11 @@ class HomeController extends GetxController {
   void initItems() {
     items.value = [
       TopHomePageViewModel(),
-      HeaderSectionViewModel(title: "Popular recipes"),
+      HomeSectionTitleViewModel(title: "Popular recipes"),
       CarouselRecipesViewModel(recipes: []),
-      HeaderSectionViewModel(title: "Popular creators"),
+      HomeSectionTitleViewModel(title: "Popular creators"),
       CarouselCreatorsViewModel(creators: localCreators),
-      HeaderSectionViewModel(title: "Featured"),
+      HomeSectionTitleViewModel(title: "Featured"),
       CarouselCreatorsViewModel(creators: localCreators),
     ];
   }
@@ -60,7 +60,7 @@ class HomeController extends GetxController {
 
   RxList<LocalRecipeViewModel> localRecipes = RxList<LocalRecipeViewModel>([
     LocalRecipeViewModel(
-      imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
+      imageUrl: KImagesConstants.darkDefaultPlaceholder,
       title: 'Spaghetti Bolognese',
       type: 'Pasta',
       preparationTime: '30-45 minutes',
@@ -68,7 +68,7 @@ class HomeController extends GetxController {
       description:
           'A comforting Italian classic made with spaghetti and a rich, savory meat sauce, perfect for weeknight dinners.',
       creator: LocalCreatorViewModel(
-        imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+        imageUrl: KImagesConstants.profileDefaultPlaceholder,
         name: 'Miriam Belina',
         nrOfRecipes: 12,
         nrOfLikes: 310,
@@ -108,7 +108,7 @@ class HomeController extends GetxController {
       ],
     ),
     LocalRecipeViewModel(
-      imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
+      imageUrl: KImagesConstants.darkDefaultPlaceholder,
       title: 'Classic Beef Steak',
       type: 'Meat',
       preparationTime: '30-45 minutes',
@@ -116,7 +116,7 @@ class HomeController extends GetxController {
       description:
           'Beef steak is a classic and beloved dish made from tender cuts of beef, typically seasoned and grilled to perfection. The result is a succulent and flavorful piece of meat that is often enjoyed with various accompaniments like vegetables, potatoes, or sauces.',
       creator: LocalCreatorViewModel(
-        imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+        imageUrl: KImagesConstants.profileDefaultPlaceholder,
         name: 'James Nikaniki',
         nrOfRecipes: 124,
         nrOfLikes: 42134,
@@ -149,7 +149,7 @@ class HomeController extends GetxController {
       ],
     ),
     LocalRecipeViewModel(
-      imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
+      imageUrl: KImagesConstants.darkDefaultPlaceholder,
       title: 'Vegan Buddha Bowl',
       type: 'Vegan',
       preparationTime: '15-20 minutes',
@@ -157,7 +157,7 @@ class HomeController extends GetxController {
       description:
           'A colorful and nutritious bowl featuring grains, vegetables, legumes, and a creamy tahini dressing—perfect for a light and healthy meal.',
       creator: LocalCreatorViewModel(
-        imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+        imageUrl: KImagesConstants.profileDefaultPlaceholder,
         name: 'Lina Mirova',
         nrOfRecipes: 58,
         nrOfLikes: 540,
@@ -191,7 +191,7 @@ class HomeController extends GetxController {
       ],
     ),
     LocalRecipeViewModel(
-      imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
+      imageUrl: KImagesConstants.darkDefaultPlaceholder,
       title: 'Chicken Tikka Masala',
       type: 'Curry',
       preparationTime: '45-60 minutes',
@@ -199,7 +199,7 @@ class HomeController extends GetxController {
       description:
           'A flavorful and rich Indian dish made with marinated grilled chicken simmered in a creamy tomato-based sauce, best served with rice or naan.',
       creator: LocalCreatorViewModel(
-        imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+        imageUrl: KImagesConstants.profileDefaultPlaceholder,
         name: 'Arjun Patel',
         nrOfRecipes: 102,
         nrOfLikes: 980,
@@ -233,7 +233,7 @@ class HomeController extends GetxController {
       ],
     ),
     LocalRecipeViewModel(
-      imageUrl: ImagesConstants.kDarkDefaultPlaceholder,
+      imageUrl: KImagesConstants.darkDefaultPlaceholder,
       title: 'Sushi Platter',
       type: 'Seafood',
       preparationTime: '60+ minutes',
@@ -241,7 +241,7 @@ class HomeController extends GetxController {
       description:
           'A traditional Japanese delicacy made with seasoned rice, fresh seafood, and vegetables, beautifully rolled in nori sheets and served with condiments.',
       creator: LocalCreatorViewModel(
-        imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+        imageUrl: KImagesConstants.profileDefaultPlaceholder,
         name: 'Yuki Tanaka',
         nrOfRecipes: 77,
         nrOfLikes: 860,
@@ -277,31 +277,31 @@ class HomeController extends GetxController {
 
   RxList<LocalCreatorViewModel> localCreators = RxList<LocalCreatorViewModel>([
     LocalCreatorViewModel(
-      imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+      imageUrl: KImagesConstants.profileDefaultPlaceholder,
       name: 'James Nikaniki',
       nrOfLikes: 124,
       nrOfRecipes: 42134,
     ),
     LocalCreatorViewModel(
-      imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+      imageUrl: KImagesConstants.profileDefaultPlaceholder,
       name: 'Miriam Belina',
       nrOfLikes: 310,
       nrOfRecipes: 12,
     ),
     LocalCreatorViewModel(
-      imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+      imageUrl: KImagesConstants.profileDefaultPlaceholder,
       name: 'Lina Mirova',
       nrOfLikes: 540,
       nrOfRecipes: 58,
     ),
     LocalCreatorViewModel(
-      imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+      imageUrl: KImagesConstants.profileDefaultPlaceholder,
       name: 'Arjun Patel',
       nrOfLikes: 980,
       nrOfRecipes: 102,
     ),
     LocalCreatorViewModel(
-      imageUrl: ImagesConstants.kProfileDefaultPlaceholder,
+      imageUrl: KImagesConstants.profileDefaultPlaceholder,
       name: 'Yuki Tanaka',
       nrOfLikes: 860,
       nrOfRecipes: 77,

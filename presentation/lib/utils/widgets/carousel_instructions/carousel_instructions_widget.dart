@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:presentation/view/instruction_view_model.dart';
 
+import '../../../core/constants/dimensions_constants.dart';
 import '../../../view/base_view_model.dart';
-import 'carousel_instruction_card_widget.dart';
+import '../../../view/instruction_view_model.dart';
+import 'instruction_card_widget.dart';
 
 class CarouselInstructionsViewModel extends BaseViewModel {
   final List<InstructionViewModel> instructions;
@@ -12,21 +13,19 @@ class CarouselInstructionsViewModel extends BaseViewModel {
 
 class CarouselInstructionsWidget extends StatelessWidget {
   final CarouselInstructionsViewModel model;
+
   const CarouselInstructionsWidget({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 15.0, bottom: 60),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: List.generate(
-            model.instructions.length,
-            (index) => CarouselInstructionCardWidget(steps: model.instructions[index].steps),
-          ),
-        ),
+    final List<StepViewModel> steps = model.instructions[0].steps;
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: KDimensionsConstants.defaultCarouselPadding,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: List.generate(steps.length, (index) => InstructionCardWidget(step: steps[index])),
       ),
     );
   }

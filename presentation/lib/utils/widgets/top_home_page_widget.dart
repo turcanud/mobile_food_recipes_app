@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:presentation/view/base_view_model.dart';
 
+import '../../view/base_view_model.dart';
 import 'profile_start_section_widget.dart';
 import 'recipes_recommendation_widget.dart';
 
@@ -23,7 +23,7 @@ class TopHomePageWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 24.0),
               child: ProfileStartSection(),
             ),
-            RecipesRecommendation(),
+            RecipesRecommendationWidget(),
           ],
         ),
       ],

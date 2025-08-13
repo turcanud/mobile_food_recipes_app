@@ -9,7 +9,7 @@ abstract class RecipeDetailsApiDto with _$RecipeDetailsApiDto {
     String? sourceUrl,
     List<IngredientApiDto>? extendedIngredients,
     String? summary,
-    List<dynamic>? analyzedInstructions,
+    List<InstructionApiDto>? analyzedInstructions,
   }) = _RecipeDetailsApiDto;
 
   factory RecipeDetailsApiDto.fromJson(Map<String, dynamic> json) => _$RecipeDetailsApiDtoFromJson(json);

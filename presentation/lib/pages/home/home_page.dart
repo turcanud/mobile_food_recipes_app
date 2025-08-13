@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../core/constants/colors_constants.dart';
 import '../../utils/widgets/carousel_creator/carousel_creators_widget.dart';
 import '../../utils/widgets/carousel_recipe/carousel_recipes_widget.dart';
-import '../../utils/widgets/header_section_widget.dart';
+import '../../utils/widgets/section_title_widget.dart';
 import '../../utils/widgets/top_home_page_widget.dart';
 import 'controllers/home_controller.dart';
 
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsConstants.kBackgroundColor,
+      backgroundColor: KColorsConstants.backgroundColor,
       body: SafeArea(
         child: Obx(() {
           final status = controller.status.value;
@@ -43,13 +43,14 @@ class _HomePageState extends State<HomePage> {
             );
           } else if (status == RemoteHomeStatus.success) {
             return ListView.builder(
+              padding: const EdgeInsets.only(bottom: 65.0),
               itemCount: controller.items.length,
               itemBuilder: (context, index) {
                 final item = controller.items[index];
                 if (item is TopHomePageViewModel) {
                   return TopHomePageWidget();
-                } else if (item is HeaderSectionViewModel) {
-                  return HeaderSectionWidget(model: item);
+                } else if (item is HomeSectionTitleViewModel) {
+                  return HomeSectionTitleWidget(model: item);
                 } else if (item is CarouselRecipesViewModel) {
                   return CarouselRecipesWidget(model: CarouselRecipesViewModel(recipes: controller.recipes));
                 } else if (item is CarouselCreatorsViewModel) {

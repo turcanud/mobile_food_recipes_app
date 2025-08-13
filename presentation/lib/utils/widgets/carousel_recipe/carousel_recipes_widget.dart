@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/dimensions_constants.dart';
 import '../../../view/base_view_model.dart';
 import '../../../view/recipe_view_model.dart';
-import 'carousel_recipe_card_widget.dart';
+import 'recipe_card_widget.dart';
 
 class CarouselRecipesViewModel extends BaseViewModel {
   final List<RecipeViewModel> recipes;
@@ -15,14 +16,14 @@ class CarouselRecipesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 15.0),
+    return SizedBox(
       height: 310.0,
       child: ListView.builder(
+        padding: KDimensionsConstants.defaultCarouselPadding,
         scrollDirection: Axis.horizontal,
         itemCount: model.recipes.length,
         itemBuilder: (context, index) {
-          return CarouselRecipeCardWidget(item: model.recipes[index]);
+          return RecipeCardWidget(item: model.recipes[index]);
         },
       ),
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/dimensions_constants.dart';
 import '../../../view/base_view_model.dart';
-import 'carousel_creator_card_widget.dart';
+import 'creator_card_widget.dart';
 
 class CarouselCreatorsViewModel extends BaseViewModel {
   final List<LocalCreatorViewModel> creators;
@@ -15,19 +16,15 @@ class CarouselCreatorsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 15.0),
+    return SizedBox(
       height: 170,
       child: ListView.builder(
+        padding: KDimensionsConstants.defaultCarouselPadding,
         scrollDirection: Axis.horizontal,
         itemCount: model.creators.length,
         itemBuilder: (context, index) {
-          return CarouselCreatorCardWidget(
-            imageUrl: model.creators[index].imageUrl,
-            creator: model.creators[index].name,
-            nrOfRecipes: model.creators[index].nrOfRecipes,
-            nrOfLikes: model.creators[index].nrOfLikes,
-          );
+          var item = model.creators[index];
+          return CreatorCardWidget(item: item);
         },
       ),
     );

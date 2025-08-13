@@ -55,7 +55,9 @@ _RecipeDetailsApiDto _$RecipeDetailsApiDtoFromJson(Map<String, dynamic> json) =>
           ?.map((e) => IngredientApiDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       summary: json['summary'] as String?,
-      analyzedInstructions: json['analyzedInstructions'] as List<dynamic>?,
+      analyzedInstructions: (json['analyzedInstructions'] as List<dynamic>?)
+          ?.map((e) => InstructionApiDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$RecipeDetailsApiDtoToJson(

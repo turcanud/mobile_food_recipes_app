@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-class ColorsConstants {
-  static const Color kPrimaryTextColor = Color(0xff091515);
-  static const Color kSecondaryTextColor = Color(0xff828686);
-  static const Color kOpenSectionTextColor = Color(0xffC77D0A);
-  static const Color kBackgroundColor = Color(0xffF5F5F5);
+class KColorsConstants {
+  static const Color primaryTextColor = Color(0xff091515);
+  static const Color secondaryTextColor = Color(0xff828686);
+  static const Color openSectionTextColor = Color(0xffC77D0A);
+  static const Color backgroundColor = Color(0xffF5F5F5);
 }

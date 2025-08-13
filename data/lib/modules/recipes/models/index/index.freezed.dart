@@ -576,7 +576,7 @@ as String?,
 /// @nodoc
 mixin _$RecipeDetailsApiDto {
 
- int? get id; String? get image; String? get title; String? get sourceUrl; List<IngredientApiDto>? get extendedIngredients; String? get summary; List<dynamic>? get analyzedInstructions;
+ int? get id; String? get image; String? get title; String? get sourceUrl; List<IngredientApiDto>? get extendedIngredients; String? get summary; List<InstructionApiDto>? get analyzedInstructions;
 /// Create a copy of RecipeDetailsApiDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -609,7 +609,7 @@ abstract mixin class $RecipeDetailsApiDtoCopyWith<$Res>  {
   factory $RecipeDetailsApiDtoCopyWith(RecipeDetailsApiDto value, $Res Function(RecipeDetailsApiDto) _then) = _$RecipeDetailsApiDtoCopyWithImpl;
 @useResult
 $Res call({
- int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<dynamic>? analyzedInstructions
+ int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<InstructionApiDto>? analyzedInstructions
 });
 
 
@@ -635,7 +635,7 @@ as String?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // igno
 as String?,extendedIngredients: freezed == extendedIngredients ? _self.extendedIngredients : extendedIngredients // ignore: cast_nullable_to_non_nullable
 as List<IngredientApiDto>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
 as String?,analyzedInstructions: freezed == analyzedInstructions ? _self.analyzedInstructions : analyzedInstructions // ignore: cast_nullable_to_non_nullable
-as List<dynamic>?,
+as List<InstructionApiDto>?,
   ));
 }
 
@@ -720,7 +720,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<InstructionApiDto>? analyzedInstructions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RecipeDetailsApiDto() when $default != null:
 return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
@@ -741,7 +741,7 @@ return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<InstructionApiDto>? analyzedInstructions)  $default,) {final _that = this;
 switch (_that) {
 case _RecipeDetailsApiDto():
 return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
@@ -761,7 +761,7 @@ return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<dynamic>? analyzedInstructions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id,  String? image,  String? title,  String? sourceUrl,  List<IngredientApiDto>? extendedIngredients,  String? summary,  List<InstructionApiDto>? analyzedInstructions)?  $default,) {final _that = this;
 switch (_that) {
 case _RecipeDetailsApiDto() when $default != null:
 return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedIngredients,_that.summary,_that.analyzedInstructions);case _:
@@ -776,7 +776,7 @@ return $default(_that.id,_that.image,_that.title,_that.sourceUrl,_that.extendedI
 @JsonSerializable()
 
 class _RecipeDetailsApiDto implements RecipeDetailsApiDto {
-  const _RecipeDetailsApiDto({this.id, this.image, this.title, this.sourceUrl, final  List<IngredientApiDto>? extendedIngredients, this.summary, final  List<dynamic>? analyzedInstructions}): _extendedIngredients = extendedIngredients,_analyzedInstructions = analyzedInstructions;
+  const _RecipeDetailsApiDto({this.id, this.image, this.title, this.sourceUrl, final  List<IngredientApiDto>? extendedIngredients, this.summary, final  List<InstructionApiDto>? analyzedInstructions}): _extendedIngredients = extendedIngredients,_analyzedInstructions = analyzedInstructions;
   factory _RecipeDetailsApiDto.fromJson(Map<String, dynamic> json) => _$RecipeDetailsApiDtoFromJson(json);
 
 @override final  int? id;
@@ -793,8 +793,8 @@ class _RecipeDetailsApiDto implements RecipeDetailsApiDto {
 }
 
 @override final  String? summary;
- final  List<dynamic>? _analyzedInstructions;
-@override List<dynamic>? get analyzedInstructions {
+ final  List<InstructionApiDto>? _analyzedInstructions;
+@override List<InstructionApiDto>? get analyzedInstructions {
   final value = _analyzedInstructions;
   if (value == null) return null;
   if (_analyzedInstructions is EqualUnmodifiableListView) return _analyzedInstructions;
@@ -836,7 +836,7 @@ abstract mixin class _$RecipeDetailsApiDtoCopyWith<$Res> implements $RecipeDetai
   factory _$RecipeDetailsApiDtoCopyWith(_RecipeDetailsApiDto value, $Res Function(_RecipeDetailsApiDto) _then) = __$RecipeDetailsApiDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<dynamic>? analyzedInstructions
+ int? id, String? image, String? title, String? sourceUrl, List<IngredientApiDto>? extendedIngredients, String? summary, List<InstructionApiDto>? analyzedInstructions
 });
 
 
@@ -862,7 +862,7 @@ as String?,sourceUrl: freezed == sourceUrl ? _self.sourceUrl : sourceUrl // igno
 as String?,extendedIngredients: freezed == extendedIngredients ? _self._extendedIngredients : extendedIngredients // ignore: cast_nullable_to_non_nullable
 as List<IngredientApiDto>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
 as String?,analyzedInstructions: freezed == analyzedInstructions ? _self._analyzedInstructions : analyzedInstructions // ignore: cast_nullable_to_non_nullable
-as List<dynamic>?,
+as List<InstructionApiDto>?,
   ));
 }
 

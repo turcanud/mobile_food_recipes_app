@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:presentation/view/base_view_model.dart';
 
-import 'carousel_video_card_widget.dart';
+import '../../../core/constants/dimensions_constants.dart';
+import '../../../view/base_view_model.dart';
+import 'video_card_widget.dart';
 
 class CarouselVideosViewModel extends BaseViewModel {}
 
@@ -10,14 +11,14 @@ class CarouselVideosWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 15.0),
+    return SizedBox(
       height: 180.0,
       child: ListView.builder(
+        padding: KDimensionsConstants.defaultCarouselPadding,
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
-          return CarouselVideoCardWidget(index: index);
+          return VideoCardWidget(index: index);
         },
       ),
     );

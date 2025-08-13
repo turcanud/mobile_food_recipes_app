@@ -7,9 +7,9 @@ import 'package:presentation/utils/mappers/recipe_details_model_mapper.dart';
 
 import '../../../utils/widgets/carousel_instructions/carousel_instructions_widget.dart';
 import '../../../utils/widgets/carousel_video/carousel_videos_widget.dart';
-import '../../../utils/widgets/details_page_section_title_widget.dart';
-import '../../../utils/widgets/ingredients_box_widget.dart';
-import '../../../utils/widgets/top_details_section_widget.dart';
+import '../../../utils/widgets/ingredients_container_widget.dart';
+import '../../../utils/widgets/section_title_widget.dart';
+import '../../../utils/widgets/top_details_page_widget.dart';
 import '../../../view/base_view_model.dart';
 import '../../../view/recipe_details_view_model.dart';
 
@@ -37,12 +37,12 @@ class MainDetailsController extends GetxController {
 
   void initItems() {
     items.value = [
-      TopDetailsSectionViewModel(imageUrl: '', description: ''),
-      DetailsPageSectionTitleViewModel(title: 'Ingredients'),
-      IngredientsBoxViewModel(ingredients: []),
-      DetailsPageSectionTitleViewModel(title: 'How to video'),
+      TopDetailsPageViewModel(imageUrl: '', description: ''),
+      DetailsSectionTitleViewModel(title: 'Ingredients'),
+      IngredientsContainerViewModel(ingredients: []),
+      DetailsSectionTitleViewModel(title: 'How to video'),
       CarouselVideosViewModel(),
-      DetailsPageSectionTitleViewModel(title: 'Instructions'),
+      DetailsSectionTitleViewModel(title: 'Instructions'),
       CarouselInstructionsViewModel(instructions: []),
     ];
   }
